@@ -1,6 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { resolve } from 'path';
-import { reject } from 'q';
 
 @Component({
   selector: 'app-promesas',
@@ -28,7 +26,7 @@ export class PromesasComponent implements OnInit {
 
     // tslint:disable-next-line:no-shadowed-variable
     return new Promise( (resolve, reject) => {
-      const contador = 0;
+      let contador = 0;
 
 
       const intervalo = setInterval(() => {
