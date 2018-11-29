@@ -13,6 +13,7 @@ export class SidebarService {
       submenu: [
         // aqui iremos adicionar as futuras RUTAS?
         { titulo: 'Dashboard', url: '/dashboard' },
+        { titulo: 'Maquinas', url: '/maquinas' },
         { titulo: 'ProgressBar', url: '/progress' },
         { titulo: 'Graficas', url: '/graficas1' },
         { titulo: 'Promesas', url: '/promesas' },
