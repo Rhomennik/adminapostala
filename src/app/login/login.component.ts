@@ -34,7 +34,7 @@ export class LoginComponent implements OnInit {
      googleInit() {
        gapi.load('auth2', () => {
         this.auth2 = gapi.auth2.init({
-          client_id: '18485052003-rh0tr656qrh6fvr3f6u8ikggjdjcpetg.apps.googleusercontent.com',
+          client_id: '140081313607-bfmn4jpjhcm2cdgusara3n4nnnlt6hnq.apps.googleusercontent.com',
 
           cookiepolicy: 'single_host_origin',
           scope: 'profile email'
@@ -52,9 +52,9 @@ attachSignin( element ) {
    const token = googleUser.getAuthResponse().id_token;
 
    this._UsuarioService.loginGoogle( token )
-   .subscribe ( () => window.location.href = '#/dashboard');
+  .subscribe ( () => window.location.href = '#/dashboard');
 
-    console.log( token );
+   //  console.log( profile );
   } );
 }
      ingresar( forma: NgForm ) {

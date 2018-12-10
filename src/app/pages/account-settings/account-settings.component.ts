@@ -34,14 +34,10 @@ export class AccountSettingsComponent implements OnInit {
     }
 
     colocarCheck() {
+      document.getElementsByClassName(`${this._ajustes.ajustes.tema}-theme`)
+     .item(0)
+     .classList.add('working');
 
-      const selectores: any = document.getElementsByClassName('selector');
-      const tema = this._ajustes.ajustes.tema;
-      for ( const ref of selectores ) {
-        if ( ref.getAttribute('data-theme' === tema )) {
-          ref.classList.add('working');
-          break;
         }
     }
-}
-}
+

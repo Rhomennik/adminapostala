@@ -6,10 +6,14 @@ import { PagesComponent } from './pages.component';
 import { SharedModule } from '../shared/shared.module';
 import { PAGES_ROUTES } from './pages.routes';
 import { FormsModule } from '@angular/forms';
+
+import { CommonModule } from '@angular/common';
 // ng2-charts
 
 import { ChartsModule } from 'ng2-charts';
 
+// Pipe module
+import { PipesModule } from '../pipes/pipes.module';
 
 // TEmporal
 import { IncrementadorComponent } from '../components/incrementador/incrementador.component';
@@ -18,6 +22,7 @@ import { AccountSettingsComponent } from './account-settings/account-settings.co
 import { PromesasComponent } from './promesas/promesas.component';
 import { RxjsComponent } from './rxjs/rxjs.component';
 import { MaquinasComponent } from './maquinas/maquinas.component';
+import { ProfileComponent } from './profile/profile.component';
 
 
 
@@ -33,7 +38,8 @@ import { MaquinasComponent } from './maquinas/maquinas.component';
     AccountSettingsComponent,
     PromesasComponent,
     RxjsComponent,
-    MaquinasComponent
+    MaquinasComponent,
+    ProfileComponent
     ],
     // exportando para poder usar em outros lugares
     exports: [
@@ -45,7 +51,9 @@ import { MaquinasComponent } from './maquinas/maquinas.component';
         SharedModule,
         PAGES_ROUTES,
         FormsModule,
-        ChartsModule
+        ChartsModule,
+        PipesModule,
+        CommonModule
     ]
 
 })
