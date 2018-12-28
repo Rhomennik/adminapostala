@@ -13,15 +13,19 @@ export class MaquinasComponent implements OnInit {
 
   maquinaas: Maquinas[];
   Object = Object;
+  interval: NodeJS.Timer;
   constructor(
     public _maquinasService: MaquinasService
     ) { }
 
   ngOnInit() {
-    this.list();
+    this.listagem();
+    this.interval = setInterval(() => {
+      this.listagem();
+    }, 50000);
 
   }
-  list() {
+  listagem() {
     this._maquinasService.list()
     .subscribe(res => {
       this._maquinasService.maquinaas = res as Maquinas[];

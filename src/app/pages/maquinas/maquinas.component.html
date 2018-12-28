@@ -1,18 +1,37 @@
-              
-<div class="col s7">
-    <table class="striped highlight black-text">
-      <thead>
-        <th>Name</th>
-        <th>Position</th>
-        <th>Office</th>
-        <th>Operations</th>
-      </thead>
-      <tbody>
-        <tr *ngFor="let maq of _maquinasService.maquinaas">
-          <td>{{ maq.uptime }}</td>
-          <td>{{ maq.maclan0 }}</td>
-          <td>{{ maq.macwlan0 }}</td>
-        </tr>
-      </tbody>
-    </table>
-  </div>
+<h1> LINUX Aposta.la <span class="badge badge-secondary">1</span></h1>
+
+<div class="row">
+  <div class="col-sm-12">
+      <div class="card">
+          <div class="table-responsive">
+              <table class="table">
+                  <thead class="thead-dark">
+                    <tr>
+                      <th scope="col">Uptime</th>
+                      <th scope="col">Ip-Local</th>
+                      <th scope="col">Ip-Publica</th>
+                      <th scope="col">Mac</th>
+                      <th scope="col" align="right">Screenshot</th>
+                     <!--   
+                       
+                       <th scope="col">Status</th>
+                    --> 
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr *ngFor="let maq of _maquinasService.maquinaas">
+                      <td>{{ maq.uptime }}</td>
+                      <td>{{ maq.iplocal }}</td>
+                      <td>{{ maq.ippublico }}</td>
+                      <td>{{ maq.mac }}</td>
+                      <td>  
+                        <a href="http://localhost:3000/img/maquinas/{{ maq.img }}" >
+                          <img src="http://localhost:3000/img/maquinas/{{ maq.img }}"  class="image-popup-no-margins" height="80" width="80">
+                        </a>
+                        <td>
+                   </td>
+                    </tr>
+                  </tbody>
+                </table>
+          </div>
+      </div>

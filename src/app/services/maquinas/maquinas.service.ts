@@ -19,7 +19,7 @@ export class MaquinasService {
   ) { }
 
   list() {
-    return this.http.get( URL_SERVICIOS + '/maquinas'  )
+    return this.http.get( URL_SERVICIOS + '/maquinas2'  )
     .pipe(
     tap(console.log)
     );
