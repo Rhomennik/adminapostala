@@ -23,6 +23,7 @@ import { PromesasComponent } from './promesas/promesas.component';
 import { RxjsComponent } from './rxjs/rxjs.component';
 import { MaquinasComponent } from './maquinas/maquinas.component';
 import { ProfileComponent } from './profile/profile.component';
+import { EmployeeComponent } from './employee/employee.component';
 
 
 
@@ -39,7 +40,8 @@ import { ProfileComponent } from './profile/profile.component';
     PromesasComponent,
     RxjsComponent,
     MaquinasComponent,
-    ProfileComponent
+    ProfileComponent,
+    EmployeeComponent
     ],
     // exportando para poder usar em outros lugares
     exports: [

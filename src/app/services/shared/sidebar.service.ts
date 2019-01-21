@@ -14,6 +14,7 @@ export class SidebarService {
         // aqui iremos adicionar as futuras RUTAS?
         { titulo: 'Dashboard', url: '/dashboard' },
         { titulo: 'Maquinas', url: '/maquinas' },
+        { titulo: 'Tarjetas', url: '/tarjetas' },
         { titulo: 'ProgressBar', url: '/progress' },
         { titulo: 'Graficas', url: '/graficas1' },
         { titulo: 'Promesas', url: '/promesas' },

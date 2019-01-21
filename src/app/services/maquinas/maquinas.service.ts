@@ -2,7 +2,6 @@ import { Injectable } from '@angular/core';
 import { Maquinas } from '../../models/maquinas.model';
 import { HttpClient } from '@angular/common/http';
 import { URL_SERVICIOS } from 'src/app/config/config';
-import { Subscriber } from 'rxjs';
 import { tap } from 'rxjs/operators';
 @Injectable({
   providedIn: 'root',

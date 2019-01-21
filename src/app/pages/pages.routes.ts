@@ -9,6 +9,7 @@ import { RxjsComponent } from './rxjs/rxjs.component';
 import { MaquinasComponent } from './maquinas/maquinas.component';
 import { LoginGuardGuard } from '../services/service.index';
 import { ProfileComponent } from './profile/profile.component';
+import { EmployeeComponent } from './employee/employee.component';
 const pagesRoutes: Routes = [ {
         path: '',
         component: PagesComponent,
@@ -19,6 +20,7 @@ const pagesRoutes: Routes = [ {
             { path: 'graficas1', component: Graficas1Component, data: { titulo: 'Graficas' }},
             { path: 'promesas', component: PromesasComponent, data: { titulo: 'Promesas' }},
             { path: 'maquinas', component: MaquinasComponent, data: { titulo: 'Maquinas' }},
+            { path: 'tarjetas', component: EmployeeComponent, data: { titulo: 'Tarjetas' }},
             { path: 'rxjs', component: RxjsComponent, data: { titulo: 'RXJS' }},
             { path: 'account-settings', component: AccountSettingsComponent, data: { titulo: 'Color-Sistema' }},
             { path: 'perfil', component: ProfileComponent, data: { titulo: 'Perfil del Usuario' }},

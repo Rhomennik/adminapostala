@@ -1,0 +1,86 @@
+<div class="row">
+    <div class="col-sm-12">
+        <div class="card">
+            <div class="table-responsive">
+                <div class="col s7">
+                    <table class="table">
+                        <thead class="thead-dark">
+                            <th>Codigo</th>
+                            <th>Cliente</th>
+                            <th>Fecha</th>
+                            <th>Perfil</th>
+                            <th>Contador</th>
+                            <th>Cambiar</th>
+                        </thead>
+                        <tbody>
+                            <tr *ngFor="let employee of employeeService.employees">
+                                <td>{{ employee._id }}</td>
+                                <td>{{ employee.cliente }}</td>
+                                <td>{{ employee.fecha }}</td>
+                                <td>{{ employee.perfil }}</td>
+                                <td>{{ employee.contador }}</td>
+                                <td><button (click)="editEmployee(employee)" type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+                                                    Editar
+                                                </button></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <!-- Start Modal -->
+        <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                              </button>
+                    </div>
+                    <div class="modal-body">
+
+                        <div class="container">
+                            <div class="row">
+                                <div class="col s5">
+                                    <div class="card">
+                                        <div class="card-content">
+                                            <form #employeeForm="ngForm" (ngSubmit)="addEmployee(employeeForm)">
+                                                <input type="hidden" name="_id" #_id="ngModel" [(ngModel)]="employeeService.selectedEmployee._id">
+                                                <div class="row">
+
+                                                    <fieldset disabled>
+                                                        <div class="form-group">
+                                                            <label for="disabledTextInput">Codigo</label>
+                                                            <input class="form-control" type="text" name="codigo" #name="ngModel" [(ngModel)]="employeeService.selectedEmployee._id" placeholder="codigo">
+                                                        </div>
+                                                    </fieldset>
+
+                                                    <div class="input-field col-s12">
+                                                        <label for="formGroupExampleInput">Cliente</label>
+                                                        <input class="form-control" type="text" name="cliente" #name="ngModel" [(ngModel)]="employeeService.selectedEmployee.cliente" placeholder="Cliente">
+                                                    </div>
+                                                    <div>
+                                                        <label for="formGroupExampleInput">Fecha</label>
+                                                        <input class="form-control" type="date" name="fecha" #name="ngModel" [(ngModel)]="employeeService.selectedEmployee.fecha" placeholder="Fecha">
+                                                    </div>
+                                                    <div class="input-field col-s12">
+                                                        <label for="formGroupExampleInput">Perfil</label>
+
+                                                        <input class="form-control" type="text" name="perfil" #name="ngModel" [(ngModel)]="employeeService.selectedEmployee.perfil" placeholder="Perfil">
+                                                    </div>
+                                                    <div class="input-field col-s12">
+                                                        <label for="formGroupExampleInput">Contador</label>
+                                                        <input class="form-control" t type="text" name="contador" #name="ngModel" [(ngModel)]="employeeService.selectedEmployee.contador" placeholder="Contador">
+                                                    </div>
+                                                    <div class="card-action" class="modal-footer">
+                                                        <div class="input-field col-s6">
+                                                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button> ï <button class="btn btn-secondary">Guardar</button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- End Modal -->
