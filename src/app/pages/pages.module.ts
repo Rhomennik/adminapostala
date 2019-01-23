@@ -24,6 +24,8 @@ import { RxjsComponent } from './rxjs/rxjs.component';
 import { MaquinasComponent } from './maquinas/maquinas.component';
 import { ProfileComponent } from './profile/profile.component';
 import { EmployeeComponent } from './employee/employee.component';
+import { EntradaComponent } from './entrada/entrada.component';
+import { UsuariosComponent } from './usuarios/usuarios.component';
 
 
 
@@ -41,7 +43,9 @@ import { EmployeeComponent } from './employee/employee.component';
     RxjsComponent,
     MaquinasComponent,
     ProfileComponent,
-    EmployeeComponent
+    EmployeeComponent,
+    EntradaComponent,
+    UsuariosComponent
     ],
     // exportando para poder usar em outros lugares
     exports: [

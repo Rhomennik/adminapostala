@@ -1,14 +1,18 @@
 export class Maquinas {
-    constructor(uptime = '', macwlan0 = '', maclan0 = '', _id = '') {
+    constructor(uptime = '', mac = '', ippublica = '', _id = '', iplocal = '', updatedAt = '') {
             this.uptime = uptime;
-            this.macwlan0 = macwlan0;
-            this.maclan0 = maclan0;
+            this.mac = mac;
+            this.ippublica = ippublica;
+            this.iplocal = iplocal;
+            this.updatedAt = updatedAt;
             this._id = _id;
 
     }
     uptime: string;
-    macwlan0: string;
-    maclan0: string;
+    mac: string;
+    ippublica: string;
+    iplocal: string;
     _id: string;
+    updatedAt: string;
 
 }

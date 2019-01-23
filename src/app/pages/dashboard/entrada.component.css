@@ -1,0 +1,47 @@
+.card-columns {
+    @include media-breakpoint-only(lg) {
+        column-count: 4;
+    }
+    @include media-breakpoint-only(xl) {
+        column-count: 5;
+    }
+}
+
+button {
+    content: "Abrir";
+    display: block;
+    font-size: 18px;
+    background-color: #ffffff;
+    border: 5px solid #1e90ff;
+    border-radius: 100px;
+    width: 150px;
+    height: 150px;
+    text-align: center;
+    text-transform: uppercase;
+    text-decoration: none;
+    font-size: 15px;
+    font-weight: 100;
+    font-family: "Segoe UI";
+    letter-spacing: 2px;
+    transition-delay: 2.0s;
+    outline: none;
+}
+
+button:active {
+    display: block;
+    border: none;
+    transition-delay: 0.1ms;
+    font-size: 18px;
+    border: 5px solid #4cd137;
+    border-radius: 100px;
+    width: 150px;
+    height: 150px;
+    transform: scale(1.00);
+    background-color: #ffffff;
+    outline: none;
+}
+
+button::before {
+    /* default text of the accordion item */
+    content: "Abrir";
+}

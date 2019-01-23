@@ -5,21 +5,17 @@
                 <div class="col s7">
                     <table class="table">
                         <thead class="thead-dark">
-                            <th>Codigo</th>
+                            <th>Tarjeta</th>
                             <th>Cliente</th>
                             <th>Fecha</th>
-                            <th>Perfil</th>
-                            <th>Contador</th>
                             <th>Cambiar</th>
                         </thead>
                         <tbody>
-                            <tr *ngFor="let employee of employeeService.employees">
-                                <td>{{ employee._id }}</td>
-                                <td>{{ employee.cliente }}</td>
-                                <td>{{ employee.fecha }}</td>
-                                <td>{{ employee.perfil }}</td>
-                                <td>{{ employee.contador }}</td>
-                                <td><button (click)="editEmployee(employee)" type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+                            <tr *ngFor="let entrada of entradaService.entradaas">
+                                <td>{{ entrada.codigo }}</td>
+                                <td>{{ entrada.nome }}</td>
+                                <td>{{ entrada.fecha }}</td>
+                                <td><button (click)="editEntrada(entrada)" type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
                                                     Editar
                                                 </button></td>
                             </tr>
@@ -45,33 +41,29 @@
                                 <div class="col s5">
                                     <div class="card">
                                         <div class="card-content">
-                                            <form #employeeForm="ngForm" (ngSubmit)="addEmployee(employeeForm)">
-                                                <input type="hidden" name="_id" #_id="ngModel" [(ngModel)]="employeeService.selectedEmployee._id">
+                                            <form #entradaForm="ngForm" (ngSubmit)="addEntrada(entradaForm)">
+                                                <input type="hidden" name="_id" #_id="ngModel" [(ngModel)]="entradaService.selectedEntrada._id">
                                                 <div class="row animated fadeIn">
 
                                                     <fieldset disabled>
                                                         <div class="form-group">
                                                             <label for="disabledTextInput">Codigo</label>
-                                                            <input class="form-control" type="text" name="codigo" #name="ngModel" [(ngModel)]="employeeService.selectedEmployee._id" placeholder="codigo">
+                                                            <input class="form-control" type="text" name="id" #name="ngModel" [(ngModel)]="entradaService.selectedEntrada._id" placeholder="id">
                                                         </div>
                                                     </fieldset>
 
                                                     <div class="input-field col-s12">
                                                         <label for="formGroupExampleInput">Cliente</label>
-                                                        <input class="form-control" type="text" name="cliente" #name="ngModel" [(ngModel)]="employeeService.selectedEmployee.cliente" placeholder="Cliente">
+                                                        <input class="form-control" type="text" name="codigo" #name="ngModel" [(ngModel)]="entradaService.selectedEntrada.codigo" placeholder="Codigo">
                                                     </div>
                                                     <div>
                                                         <label for="formGroupExampleInput">Fecha</label>
-                                                        <input class="form-control" type="date" name="fecha" #name="ngModel" [(ngModel)]="employeeService.selectedEmployee.fecha" placeholder="Fecha">
+                                                        <input class="form-control" type="text" name="nome" #name="ngModel" [(ngModel)]="entradaService.selectedEntrada.nome" placeholder="nome">
                                                     </div>
                                                     <div class="input-field col-s12">
                                                         <label for="formGroupExampleInput">Perfil</label>
 
-                                                        <input class="form-control" type="text" name="perfil" #name="ngModel" [(ngModel)]="employeeService.selectedEmployee.perfil" placeholder="Perfil">
-                                                    </div>
-                                                    <div class="input-field col-s12">
-                                                        <label for="formGroupExampleInput">Contador</label>
-                                                        <input class="form-control" t type="text" name="contador" #name="ngModel" [(ngModel)]="employeeService.selectedEmployee.contador" placeholder="Contador">
+                                                        <input class="form-control" type="date" name="date" #name="ngModel" [(ngModel)]="entradaService.selectedEntrada.fecha" placeholder="fecha">
                                                     </div>
                                                     <div class="card-action" class="modal-footer">
                                                         <div class="input-field col-s6">

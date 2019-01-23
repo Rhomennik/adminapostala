@@ -11,7 +11,7 @@ export class EmployeeService {
   selectedEmployee: Employee;
   employees: Employee[];
 
-  readonly URL_API = 'http://localhost:3000/api/employee';
+  readonly URL_API = 'http://172.16.0.15:3000/tarjetas';
 
   constructor(private http: HttpClient) {
     this.selectedEmployee = new Employee();

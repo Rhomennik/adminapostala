@@ -13,12 +13,29 @@ export class SidebarService {
       submenu: [
         // aqui iremos adicionar as futuras RUTAS?
         { titulo: 'Dashboard', url: '/dashboard' },
-        { titulo: 'Maquinas', url: '/maquinas' },
+        { titulo: 'Maquinas', url: '/maquinas' }
+      //  { titulo: 'ProgressBar', url: '/progress' },
+      //  { titulo: 'Graficas', url: '/graficas1' },
+      //  { titulo: 'Promesas', url: '/promesas' },
+      //  { titulo: 'Rxjs', url: '/rxjs' },
+      ]
+    },
+    {
+      titulo: 'Puerta',
+      icono: 'mdi mdi-glassdoor',
+      submenu: [
+        // aqui iremos adicionar as futuras RUTAS?
         { titulo: 'Tarjetas', url: '/tarjetas' },
-        { titulo: 'ProgressBar', url: '/progress' },
-        { titulo: 'Graficas', url: '/graficas1' },
-        { titulo: 'Promesas', url: '/promesas' },
-        { titulo: 'Rxjs', url: '/rxjs' },
+        { titulo: 'Entradas',  url: '/entrada' }
+      ]
+    },
+    {
+      titulo: 'Mantenimientos',
+      icono: 'mdi mdi-folder-lock-open',
+      submenu: [
+        {titulo: 'Usuarios', url: '/usuarios'},
+        {titulo: 'Hospitales', url: '/hospitales'},
+        {titulo: 'Medicos', url: '/medicos'}
       ]
     }
   ];
