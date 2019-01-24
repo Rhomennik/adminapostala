@@ -26,6 +26,8 @@ import { ProfileComponent } from './profile/profile.component';
 import { EmployeeComponent } from './employee/employee.component';
 import { EntradaComponent } from './entrada/entrada.component';
 import { UsuariosComponent } from './usuarios/usuarios.component';
+import { ModalUploadComponent } from '../components/modal-upload/modal-upload.component';
+
 
 
 
@@ -45,7 +47,8 @@ import { UsuariosComponent } from './usuarios/usuarios.component';
     ProfileComponent,
     EmployeeComponent,
     EntradaComponent,
-    UsuariosComponent
+    UsuariosComponent,
+    ModalUploadComponent
     ],
     // exportando para poder usar em outros lugares
     exports: [

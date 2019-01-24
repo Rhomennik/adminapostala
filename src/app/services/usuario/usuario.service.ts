@@ -179,7 +179,7 @@ return this.http.get(url);
    }
 
    borrarUsuario(_id: string) {
-     const url = URL_SERVICIOS + '/usuario/' + _id;
+     let url = URL_SERVICIOS + '/usuario/' + _id;
      url += '?token=' + this.token;
      return this.http.delete(url)
      .pipe(map(resp => {
