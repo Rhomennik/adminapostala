@@ -37,7 +37,7 @@ export class UsuariosComponent implements OnInit {
     this.cargando = true;
     this._usuarioService.cargarUsuarios( this.desde )
     .subscribe((resp: any) => {
-      console.log(resp);
+     // console.log(resp);
       this.totalRegistros = resp.total;
       this.usuarios = resp.usuarios;
       this.cargando = false;
@@ -67,17 +67,18 @@ export class UsuariosComponent implements OnInit {
 
     if ( termino.length <= 0 ) {
       this.cargarUsuario();
+      return;
     }
     this._usuarioService.buscarUsuarios( termino )
     .subscribe((usuarios: Usuario[]) => {
       this.usuarios =  usuarios;
-      console.log(usuarios);
+     // console.log(usuarios);
     });
 
   }
 
   borrarUsuario( usuario: Usuario) {
-    console.log(usuario);
+    // console.log(usuario);
     if ( usuario._id === this._usuarioService.usuario._id) {
     swal('No puede borrar usuario', 'No se puede borrar a si mismo', 'error');
     return;

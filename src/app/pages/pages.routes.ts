@@ -12,6 +12,9 @@ import { ProfileComponent } from './profile/profile.component';
 import { EmployeeComponent } from './employee/employee.component';
 import { EntradaComponent } from './entrada/entrada.component';
 import { UsuariosComponent } from './usuarios/usuarios.component';
+import { HospitalesComponent } from './hospitales/hospitales.component';
+import { MedicosComponent } from './medicos/medicos.component';
+import { MedicoComponent } from './medicos/medico.component';
 const pagesRoutes: Routes = [ {
         path: '',
         component: PagesComponent,
@@ -22,12 +25,18 @@ const pagesRoutes: Routes = [ {
             { path: 'graficas1', component: Graficas1Component, data: { titulo: 'Graficas' }},
             { path: 'promesas', component: PromesasComponent, data: { titulo: 'Promesas' }},
             { path: 'maquinas', component: MaquinasComponent, data: { titulo: 'Maquinas' }},
+            // Puerta
             { path: 'entrada', component: EntradaComponent, data: { titulo: 'Entradas' }},
             { path: 'tarjetas', component: EmployeeComponent, data: { titulo: 'Tarjetas' }},
-            { path: 'usuarios', component: UsuariosComponent, data: { titulo: 'Usuarios' }},
+
             { path: 'rxjs', component: RxjsComponent, data: { titulo: 'RXJS' }},
             { path: 'account-settings', component: AccountSettingsComponent, data: { titulo: 'Color-Sistema' }},
             { path: 'perfil', component: ProfileComponent, data: { titulo: 'Perfil del Usuario' }},
+            // Mantenimientos
+            { path: 'usuarios', component: UsuariosComponent, data: { titulo: 'Usuarios' }},
+            { path: 'hospitales', component: HospitalesComponent, data: { titulo: 'Hospitales' }},
+            { path: 'medicos', component: MedicosComponent, data: { titulo: 'Medicos' }},
+            { path: 'medico/:id', component: MedicoComponent, data: { titulo: 'Actualizar Medico' }},
             { path: '', redirectTo: '/dashboard', pathMatch: 'full' }
         ]
     }

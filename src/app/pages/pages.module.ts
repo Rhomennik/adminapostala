@@ -23,10 +23,15 @@ import { PromesasComponent } from './promesas/promesas.component';
 import { RxjsComponent } from './rxjs/rxjs.component';
 import { MaquinasComponent } from './maquinas/maquinas.component';
 import { ProfileComponent } from './profile/profile.component';
+import { ModalUploadComponent } from '../components/modal-upload/modal-upload.component';
+// Puerta
 import { EmployeeComponent } from './employee/employee.component';
 import { EntradaComponent } from './entrada/entrada.component';
+// Mantenimientos
 import { UsuariosComponent } from './usuarios/usuarios.component';
-import { ModalUploadComponent } from '../components/modal-upload/modal-upload.component';
+import { HospitalesComponent } from './hospitales/hospitales.component';
+import { MedicosComponent } from './medicos/medicos.component';
+import { MedicoComponent } from './medicos/medico.component';
 
 
 
@@ -48,7 +53,10 @@ import { ModalUploadComponent } from '../components/modal-upload/modal-upload.co
     EmployeeComponent,
     EntradaComponent,
     UsuariosComponent,
-    ModalUploadComponent
+    ModalUploadComponent,
+    HospitalesComponent,
+    MedicosComponent,
+    MedicoComponent
     ],
     // exportando para poder usar em outros lugares
     exports: [

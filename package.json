@@ -34,6 +34,7 @@
     "ng2-charts": "^1.6.0",
     "rxjs": "^6.3.3",
     "sweetalert": "^2.1.2",
+    "sweetalert2": "^8.0.1",
     "tiempo": "^1.1.5",
     "tsd": "^0.6.5",
     "zone.js": "~0.8.26"

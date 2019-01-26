@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit} from '@angular/core';
 import { SubirArchivoService } from 'src/app/services/service.index';
 import { ModalUploadService } from './modal-upload.service';
 
@@ -39,19 +39,18 @@ reader.onloadend = () => this.imagenTemp = reader.result.toString();
   }
 
   subirImagen() {
-    this._subirArchivoService.subirArchivo( this.imagenSubir, this._modalUploadService.tipo, this._modalUploadService.id)
-    .then(resp => {
 
-      console.log(resp);
-      this._modalUploadService.notificacion.emit( resp );
-      this.cerrarModal();
+    this._subirArchivoService.subirArchivo( this.imagenSubir, this._modalUploadService.tipo, this._modalUploadService.id )
+          .then( resp => {
 
+            this._modalUploadService.notificacion.emit( resp );
+            this.cerrarModal();
 
-    })
+          })
+          .catch( err => {
+            console.log( 'Error en la carga... ');
+          });
 
-    .catch( err => {
-      console.log('Error en la carga.....');
-    });
   }
 
 
@@ -59,7 +58,7 @@ reader.onloadend = () => this.imagenTemp = reader.result.toString();
   cerrarModal() {
     this.imagenTemp = null;
     this.imagenSubir = null;
-    this._modalUploadService.ocultarModal();
+    this._modalUploadService.ocultaarModal();
   }
 
 }

@@ -31,3 +31,8 @@
     height: 100%;
     z-index: 9999;
 }
+
+.modal-backdrop {
+    /* bug fix - no overlay */
+    display: none;
+}

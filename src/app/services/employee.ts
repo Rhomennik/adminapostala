@@ -2,7 +2,8 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 
 import { Employee } from '../models/employee';
-
+import { URL_SERVICIOS } from '../config/config';
+import { map } from 'rxjs/internal/operators/map';
 @Injectable({
   providedIn: 'root'
 })
@@ -31,5 +32,11 @@ export class EmployeeService {
 
   deleteEmployee(_id: string) {
     return this.http.delete(this.URL_API + `/${_id}`);
+  }
+
+  buscarTarjeta(termino: string) {
+    let url = URL_SERVICIOS + '/busqueda/coleccion/tarjetas/' + termino;
+    return this.http.get(url)
+    .pipe(map((resp: any) => resp.tarjetas));
   }
 }

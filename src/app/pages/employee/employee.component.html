@@ -1,4 +1,16 @@
 <div class="row animated fadeIn">
+    <div class="col-12">
+        <div class="card">
+            <div class="card-body">
+
+                <input #input (keyup)="buscarTarjeta( input.value )" type="text" class="form-control" placeholder="Buscar usuario...">
+
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row animated fadeIn">
     <div class="col-sm-12">
         <div class="card">
             <div class="table-responsive">
@@ -14,7 +26,7 @@
                         </thead>
                         <tbody>
                             <tr *ngFor="let employee of employeeService.employees">
-                                <td>{{ employee._id }}</td>
+                                <td>{{ employee.codigo }}</td>
                                 <td>{{ employee.cliente }}</td>
                                 <td>{{ employee.fecha }}</td>
                                 <td>{{ employee.perfil }}</td>

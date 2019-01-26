@@ -16,7 +16,11 @@ declare var M: any;
 })
 export class EmployeeComponent implements OnInit {
 
-  constructor(public employeeService: EmployeeService) { }
+  tarjetas: Employee[] = [];
+
+  constructor(
+    public employeeService: EmployeeService
+    ) { }
 
   ngOnInit() {
     this.getEmployees();
@@ -73,4 +77,12 @@ export class EmployeeComponent implements OnInit {
     }
   }
 
-}
+  buscarTarjeta( termino: string) {
+    if ( termino.length <= 0) {
+      this.getEmployees();
+    }
+    this.employeeService.buscarTarjeta(termino)
+    .subscribe( tarjetass => this.employeeService.employees = tarjetass);
+
+  }
+    }
