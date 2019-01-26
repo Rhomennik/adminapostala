@@ -28,7 +28,7 @@ export class HospitalService {
 
   obtenerHospital(_id: string) {
 
-    const url = URL_SERVICIOS + '/hospital' + _id;
+    const url = URL_SERVICIOS + '/hospital/' + _id;
     return this.http.get(url)
     .pipe(map( (resp: any) => resp.hospital));
 
