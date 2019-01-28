@@ -11,6 +11,7 @@ import { Usuario } from 'src/app/models/usuario.model';
 export class SidebarComponent implements OnInit {
 
   usuario: Usuario;
+  interval: NodeJS.Timer;
 
   constructor(
     public _sidebar: SidebarService,
@@ -19,6 +20,7 @@ export class SidebarComponent implements OnInit {
 
   ngOnInit() {
     this.usuario = this._usuarioService.usuario;
+    this._sidebar.cargarMenu();
   }
 
 }

@@ -7,7 +7,10 @@ import { AccountSettingsComponent } from './account-settings/account-settings.co
 import { PromesasComponent } from './promesas/promesas.component';
 import { RxjsComponent } from './rxjs/rxjs.component';
 import { MaquinasComponent } from './maquinas/maquinas.component';
+// Guards
 import { LoginGuardGuard } from '../services/service.index';
+import { AdminGuard } from '../services/service.index';
+
 import { ProfileComponent } from './profile/profile.component';
 import { EmployeeComponent } from './employee/employee.component';
 import { EntradaComponent } from './entrada/entrada.component';
@@ -15,6 +18,7 @@ import { UsuariosComponent } from './usuarios/usuarios.component';
 import { HospitalesComponent } from './hospitales/hospitales.component';
 import { MedicosComponent } from './medicos/medicos.component';
 import { MedicoComponent } from './medicos/medico.component';
+import { BusquedaComponent } from './busqueda/busqueda.component';
 const pagesRoutes: Routes = [ {
         path: '',
         component: PagesComponent,
@@ -32,8 +36,15 @@ const pagesRoutes: Routes = [ {
             { path: 'rxjs', component: RxjsComponent, data: { titulo: 'RXJS' }},
             { path: 'account-settings', component: AccountSettingsComponent, data: { titulo: 'Color-Sistema' }},
             { path: 'perfil', component: ProfileComponent, data: { titulo: 'Perfil del Usuario' }},
+            { path: 'busqueda/:termino', component: BusquedaComponent, data: { titulo: 'Buscador' }},
+
+            {
+                path: 'usuarios',
+                component: UsuariosComponent,
+                canActivate: [ AdminGuard ],
+                data: { titulo: 'Usuarios' }},
+
             // Mantenimientos
-            { path: 'usuarios', component: UsuariosComponent, data: { titulo: 'Usuarios' }},
             { path: 'hospitales', component: HospitalesComponent, data: { titulo: 'Hospitales' }},
             { path: 'medicos', component: MedicosComponent, data: { titulo: 'Medicos' }},
             { path: 'medico/:id', component: MedicoComponent, data: { titulo: 'Actualizar Medico' }},

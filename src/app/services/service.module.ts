@@ -18,6 +18,7 @@ import { ModalUploadService } from '../components/modal-upload/modal-upload.serv
 import { MedicoService } from './medico/medico.service';
 import { EmployeeService } from './employee';
 import { MaquinasService } from './maquinas/maquinas.service';
+import { AdminGuard } from './guards/admin.guard';
 
 @NgModule({
   imports: [
@@ -30,6 +31,7 @@ import { MaquinasService } from './maquinas/maquinas.service';
   SharedService,
   UsuarioService,
   LoginGuardGuard,
+  AdminGuard,
   SubirArchivoService,
   ModalUploadService,
   MedicoService,
