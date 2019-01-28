@@ -33,6 +33,7 @@
     "moment": "^2.23.0",
     "ng2-charts": "^1.6.0",
     "rxjs": "^6.3.3",
+    "rxjs-compat": "^6.3.3",
     "sweetalert": "^2.1.2",
     "sweetalert2": "^8.0.1",
     "tiempo": "^1.1.5",

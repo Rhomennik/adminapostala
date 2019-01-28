@@ -5,8 +5,8 @@ import { URL_SERVICIOS } from 'src/app/config/config';
 import { map, catchError } from 'rxjs/operators';
 import { Router } from '@angular/router';
 import { SubirArchivoService } from '../subir-archivo/subir-archivo.service';
-import { ErrorObservable } from 'rxjs/observable/ErrorObservable';
-import { throwError } from 'rxjs';
+import { throwError, empty } from 'rxjs';
+import {Observable} from 'rxjs/Observable';
 @Injectable({
   providedIn: 'root'
 })
@@ -108,13 +108,17 @@ login( usuario: Usuario, recordar: boolean= false ) {
           this.guardarStorage( resp.id, resp.token, resp.usuario, resp.menu );
           return true;
         }),
-        catchError(err => {
-            swal ( 'Error en el Login' ,  err.error.mensaje ,  'error' );
-        })
-        );
-
-}
-
+       catchError( (err: any) => {
+        swal({
+          title: 'Error',
+          text: err.error.mensaje,
+          icon: 'error',
+        });
+          console.log(err.error.mensaje);
+          return new Observable<any>();
+       })
+     );
+   }
 
 
 
@@ -131,11 +135,7 @@ return this.http.post(url, usuario)
 .pipe(map((res: any) => {
      swal('Correo Creado', usuario.email, 'success');
      return res.usuario;
-
-    }),
-    catchError(err => {
-        swal ( err.error.mensaje ,  'El correo ya existe' ,  'error' );
-    }));
+    }) );
 
 
 
@@ -162,9 +162,16 @@ return this.http.post(url, usuario)
       return true;
 
     }),
-    catchError(err => {
-        swal ( 'Error en el Login' ,  err.error.mensaje ,  'error' );
-    }));
+       catchError( (err: any) => {
+        swal({
+          title: 'Error',
+          text: err.error.mensaje,
+          icon: 'error',
+        });
+          console.log(err.error.mensaje);
+          return new Observable<any>();
+       })
+    );
 
    }
 
