@@ -1,18 +1,12 @@
 export class Maquinas {
-    constructor(uptime = '', mac = '', ippublica = '', _id = '', iplocal = '', updatedAt = '') {
-            this.uptime = uptime;
-            this.mac = mac;
-            this.ippublica = ippublica;
-            this.iplocal = iplocal;
-            this.updatedAt = updatedAt;
-            this._id = _id;
+    constructor(
+        public uptime: string,
+        public mac: string,
+        public ippublica: string,
+        public iplocal: string,
+        public _id: string,
+        public updatedAt: string,
+        public img: String
 
-    }
-    uptime: string;
-    mac: string;
-    ippublica: string;
-    iplocal: string;
-    _id: string;
-    updatedAt: string;
-
+    ) {}
 }

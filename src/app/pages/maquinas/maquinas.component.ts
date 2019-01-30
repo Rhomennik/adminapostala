@@ -10,33 +10,43 @@ import * as $ from 'jquery';
   providers: [MaquinasService]
 })
 export class MaquinasComponent implements OnInit {
-  maquinaas: Maquinas[];
-  Object = Object;
+  maquinas: Maquinas[] = [];
   interval: NodeJS.Timer;
+  desde: number = 0;
+  totalRegistros: number = 0;
   constructor(
     public _maquinasService: MaquinasService
     ) { }
 
   ngOnInit() {
     this.CalculoOff();
-    this.listagem();
+    this.listarMaquinas();
    // this.interval = setInterval(() => {
    //   this.listagem();
    // }, 5000);
 
   }
-  listagem() {
-    this._maquinasService.list()
-    .subscribe(res => {
-      this._maquinasService.maquinaas = res as Maquinas[];
+
+  listarMaquinas() {
+    this._maquinasService.listarMaquinas( this.desde )
+    .subscribe((resp: any) => {
+     this.maquinas = resp.maquinas;
+     this.totalRegistros = resp.total;
     });
+
   }
-  HoraAtual() {
+
+  teste( maquinaaas: Maquinas ) {
     // Hora atual
     const date = require('date-and-time');
     const now = new Date();
-    const Atual = date.format(now, 'Hmm');
+    const Atual = date.format(now, 'YYYY-MM-DD HH:mm:ss');
+    const final = tiempo.format(maquinaaas.updatedAt, Atual);
+    console.log( final );
     return Atual;
+
+  }
+  HoraAtual() {
   }
   CalculoOff() {
 
@@ -48,7 +58,6 @@ export class MaquinasComponent implements OnInit {
       const texto =  $('#idDaTabela tr:nth-child(1) td:nth-child(6)').text();
       const result = (texto);
       const a = tiempo.format(Atual, result);
-      console.log([0], a);
   });
   }
 

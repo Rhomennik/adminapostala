@@ -56,7 +56,7 @@
 
                 <table class="table table-hover" *ngIf="hospitales.length > 0">
                     <tbody>
-                        <tr *ngFor="let hospital of hospitales" [routerLink]="['/hospital']" class="pointer">
+                        <tr *ngFor="let hospital of hospitales" [routerLink]="['/hospitales']" class="pointer">
                             <td>
                                 <img [src]=" hospital.img | imagen:'medico'" class="img-50 img-circle">
                             </td>

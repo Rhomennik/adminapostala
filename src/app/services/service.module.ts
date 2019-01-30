@@ -9,7 +9,8 @@ import {
   SharedService,
   UsuarioService,
   LoginGuardGuard,
-  SubirArchivoService
+  SubirArchivoService,
+  VerificaTokenGuard
 
 
 } from './service.index';
@@ -19,6 +20,8 @@ import { MedicoService } from './medico/medico.service';
 import { EmployeeService } from './employee';
 import { MaquinasService } from './maquinas/maquinas.service';
 import { AdminGuard } from './guards/admin.guard';
+import { NormalGuard } from './guards/normal.guard';
+
 
 @NgModule({
   imports: [
@@ -32,11 +35,13 @@ import { AdminGuard } from './guards/admin.guard';
   UsuarioService,
   LoginGuardGuard,
   AdminGuard,
+  NormalGuard,
   SubirArchivoService,
   ModalUploadService,
   MedicoService,
   EmployeeService,
-  MaquinasService
+  MaquinasService,
+  VerificaTokenGuard
   ],
   declarations: []
 })

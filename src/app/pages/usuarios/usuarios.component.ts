@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Usuario } from 'src/app/models/usuario.model';
 import { UsuarioService } from '../../services/service.index';
-import { Subscriber } from 'rxjs';
+import { Subscriber, Subscription } from 'rxjs';
 import { ModalUploadService } from '../../components/modal-upload/modal-upload.service';
 
 
@@ -78,7 +78,7 @@ export class UsuariosComponent implements OnInit {
   }
 
   borrarUsuario( usuario: Usuario) {
-    // console.log(usuario);
+     console.log(usuario);
     if ( usuario._id === this._usuarioService.usuario._id) {
     swal('No puede borrar usuario', 'No se puede borrar a si mismo', 'error');
     return;
@@ -107,7 +107,8 @@ export class UsuariosComponent implements OnInit {
   }
 
   guardarUsuario( usuario: Usuario) {
-    this._usuarioService.actualizarUsuario( usuario );
+    this._usuarioService.actualizarUsuario( usuario )
+    .subscribe();
   }
 
 }

@@ -26,6 +26,31 @@ export class UsuarioService {
    // console.log('Serivicio de usuario funcionando');
    }
 
+
+   renuevaToken() {
+     let url = URL_SERVICIOS + '/login/renuevatoken';
+     url += '?token=' + this.token;
+
+     this.http.get(url)
+     .pipe(map((resp: any) => {
+
+        this.token = resp.token;
+        localStorage.setItem('token', this.token );
+        console.log('Token Renovado');
+        return true;
+     }),
+     catchError( (err: any) => {
+       this.router.navigate(['/login']);
+      swal({
+        title: 'Error',
+        text: 'No se pudo borrar el Token',
+        icon: 'error',
+      });
+        console.log(err.error.mensaje);
+        return new Observable<any>();
+     }));
+   }
+
    estaLogueado( ) {
       return( this.token.length > 5 ) ? true : false;
    }
@@ -145,35 +170,21 @@ return this.http.post(url, usuario)
 
     let url = URL_SERVICIOS + '/usuario/' + usuario._id;
     url += '?token=' + this.token;
-    // console.log( url );
 
-    this.http.put( url, usuario )
-    .pipe(map((resp: any) => {
+    return this.http.put( url, usuario )
+                .pipe(map( (resp: any) => {
 
-      if ( usuario._id === this.usuario._id ) {
-        const usuarioDB: Usuario = resp.usuario;
-        this.guardarStorage( usuarioDB._id, this.token, usuarioDB, this.menu );
+                  if ( usuario._id === this.usuario._id ) {
+                    const usuarioDB: Usuario = resp.usuario;
+                    this.guardarStorage( usuarioDB._id, this.token, usuarioDB, this.menu );
+                  }
 
-      }
-    //  if ( !this.usuario.google ) {
-    //  }
-      sweetAlert('Usuario actualizado', usuario.nombre, 'success');
+                  swal('Usuario actualizado', usuario.nombre, 'success' );
 
-      return true;
+                  return true;
+                }));
 
-    }),
-       catchError( (err: any) => {
-        swal({
-          title: 'Error',
-          text: err.error.mensaje,
-          icon: 'error',
-        });
-          console.log(err.error.mensaje);
-          return new Observable<any>();
-       })
-    );
-
-   }
+  }
 
    cambiarImagen(archivo: File, id: string) {
      this._subirArchivoService.subirArchivo( archivo, 'usuarios', id )

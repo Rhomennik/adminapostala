@@ -37,6 +37,7 @@ Login register and recover password Page
     background-color: #2f3542;
     background-repeat: no-repeat;
     background-position: center;
+    background-size: 1960px 960px;
     height: 100%;
     width: 100%;
     padding: 10% 0;
@@ -69,8 +70,13 @@ Login register and recover password Page
     margin-top: 0px;
 }
 
+.login-sidebar {
+    padding: 0px;
+    margin-top: 0px;
+}
+
 .login-sidebar .login-box {
     right: 0px;
     position: absolute;
-    height: 100%;
+    height: 200%;
 }
