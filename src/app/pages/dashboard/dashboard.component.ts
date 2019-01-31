@@ -5,7 +5,7 @@ import { EntradaService } from '../../services/entrada';
 @Component({
   selector: 'app-dashboard',
   templateUrl: './dashboard.component.html',
-  styleUrls: ['./entrada.component.css'],
+  styleUrls: ['./dashboard.component.css'],
   providers: [EntradaService]
 })
 export class DashboardComponent implements OnInit {

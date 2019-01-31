@@ -1,13 +1,4 @@
-.card-columns {
-    @include media-breakpoint-only(lg) {
-        column-count: 4;
-    }
-    @include media-breakpoint-only(xl) {
-        column-count: 5;
-    }
-}
-
-button {
+.slk {
     content: "Abrir";
     display: block;
     font-size: 18px;
@@ -27,7 +18,7 @@ button {
     outline: none;
 }
 
-button:active {
+.slk:active {
     display: block;
     border: none;
     transition-delay: 0.1ms;
@@ -41,7 +32,7 @@ button:active {
     outline: none;
 }
 
-button::before {
+.slk::before {
     /* default text of the accordion item */
     content: "Abrir";
 }
