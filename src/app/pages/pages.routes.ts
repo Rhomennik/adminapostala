@@ -25,6 +25,7 @@ import { MedicosComponent } from './medicos/medicos.component';
 import { MedicoComponent } from './medicos/medico.component';
 import { BusquedaComponent } from './busqueda/busqueda.component';
 import { VerificaTokenGuard } from '../services/guards/verifica-token.guard';
+import { TarjetasComponent } from './tarjetas/tarjetas.component';
 const pagesRoutes: Routes = [
             {
                 path: 'dashboard',
@@ -40,7 +41,8 @@ const pagesRoutes: Routes = [
             { path: 'maquinas', component: MaquinasComponent, data: { titulo: 'Maquinas', canActivate: [ AdminGuard ] }},
             // Puerta
             { path: 'entrada', component: EntradaComponent, data: { titulo: 'Entradas', canActivate: [ AdminGuard ] }},
-            { path: 'tarjetas', component: EmployeeComponent, data: { titulo: 'Tarjetas', canActivate: [ AdminGuard ] }},
+           // { path: 'tarjetas', component: EmployeeComponent, data: { titulo: 'Tarjetas', canActivate: [ AdminGuard ] }},
+            { path: 'tarjetas', component: TarjetasComponent, data: { titulo: 'Tarjetas', canActivate: [ AdminGuard ] }},
 
             { path: 'rxjs', component: RxjsComponent, data: { titulo: 'RXJS' }},
             { path: 'account-settings', component: AccountSettingsComponent, data: { titulo: 'Color-Sistema'}, canActivate: [ AdminGuard ]},

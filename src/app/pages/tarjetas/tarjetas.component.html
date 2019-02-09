@@ -1,0 +1,79 @@
+<div class="row animated fadeIn">
+    <div class="col-12">
+        <div class="card">
+            <div class="card-body">
+
+                <input #input (keyup)="buscarTarjeta(input.value )" type="text" class="form-control" placeholder="Buscar usuario...">
+
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+<div class="row animated fadeIn">
+    <div class="col-12">
+        <div class="card">
+            <div class="card-body table-responsive">
+
+                <h3 class="card-title">Sucursales registradas: <small class="label label-inverse label-rounded">{{ totalRegistro }}</small></h3>
+
+                <div class="text-right">
+
+                    <button type="button" class="btn waves-effect waves-light btn-rounded btn-inverse">
+        <i class="fa fa-map-marker">
+            Crear Sucursal
+        </i>
+    </button>
+                </div>
+
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>Codigo</th>
+                            <th>Cliente</th>
+                            <th>Perfil</th>
+                            <th>Contador</th>
+                            <th>Fecha</th>
+
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let tarje of tarjetas">
+                            <td>{{ tarje._id}}</td>
+                            <td>
+                                <input [(ngModel)]="tarje.cliente" type="text" class="form-control" placeholder="Modificar cliente.....">
+                            </td>
+                            <td>{{ tarje.perfil }}</td>
+                            <br>
+                            <td>{{ tarje.contador }}</td>
+                            <td>{{ tarje.fecha }}</td>
+                            <td>
+                                <button (click)="guardarTarjeta( tarje )" class="btn btn-primary">
+                              <i class="fa fa-save"></i>
+                            </button>
+                                <button (click)="borrarTarjeta( tarje )" class="btn btn-danger">
+                                <i class="fa fa-trash-o"></i>
+                              </button>
+                            </td>
+                            <td>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <button class="btn btn-secondary"> 
+              Anteriores
+            </button>
+
+                <button class="btn btn-secondary"> 
+                Siguintes
+              </button>
+
+
+            </div>
+        </div>
+    </div>
+</div>

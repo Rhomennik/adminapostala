@@ -27,6 +27,7 @@ import { ModalUploadComponent } from '../components/modal-upload/modal-upload.co
 // Puerta
 import { EmployeeComponent } from './employee/employee.component';
 import { EntradaComponent } from './entrada/entrada.component';
+import { TarjetasComponent } from './tarjetas/tarjetas.component';
 // Mantenimientos
 import { UsuariosComponent } from './usuarios/usuarios.component';
 import { HospitalesComponent } from './hospitales/hospitales.component';
@@ -35,6 +36,7 @@ import { MedicoComponent } from './medicos/medico.component';
 import { BusquedaComponent } from './busqueda/busqueda.component';
 import { SucursalComponent } from './sucursal/sucursal.component';
 import { SucursaComponent } from './sucursal/sucursa.component';
+
 
 
 
@@ -62,7 +64,8 @@ import { SucursaComponent } from './sucursal/sucursa.component';
     MedicoComponent,
     BusquedaComponent,
     SucursalComponent,
-    SucursaComponent
+    SucursaComponent,
+    TarjetasComponent
     ],
     // exportando para poder usar em outros lugares
     exports: [

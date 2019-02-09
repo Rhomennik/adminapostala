@@ -2,9 +2,14 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
 import { URL_SERVICIOS } from '../../config/config';
+
+
+
 import { Usuario } from '../../models/usuario.model';
 import { Medico } from '../../models/medico.model';
 import { Hospital } from '../../models/hospital.model';
+import { Sucursals } from '../../models/sucursal';
+import { Maquinas } from '../../models/maquinas.model';
 
 @Component({
   selector: 'app-busqueda',
@@ -16,6 +21,8 @@ export class BusquedaComponent implements OnInit {
   usuarios: Usuario[] = [];
   medicos: Medico[] = [];
   hospitales: Hospital[] = [];
+  sucursales: Sucursals[] = [];
+  maqui: Maquinas[] = [];
   constructor(
     public activatedRoute: ActivatedRoute,
     public http: HttpClient
@@ -42,6 +49,8 @@ export class BusquedaComponent implements OnInit {
       this.hospitales = resp.hospitales;
       this.medicos = resp.medicos;
       this.usuarios = resp.usuarios;
+      this.sucursales = resp.sucursal;
+      this.maqui = resp.maquinas;
     });
 
 

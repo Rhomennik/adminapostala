@@ -64,7 +64,7 @@
                                                     <fieldset disabled>
                                                         <div class="form-group">
                                                             <label for="disabledTextInput">Codigo</label>
-                                                            <input class="form-control" type="text" name="codigo" #name="ngModel" [(ngModel)]="employeeService.selectedEmployee._id" placeholder="codigo">
+                                                            <input class="form-control" type="text" name="codigo" #name="ngModel" [(ngModel)]="employeeService.selectedEmployee._id" placeholder="Codigo">
                                                         </div>
                                                     </fieldset>
 
@@ -74,7 +74,7 @@
                                                     </div>
                                                     <div>
                                                         <label for="formGroupExampleInput">Fecha</label>
-                                                        <input class="form-control" type="date" name="fecha" #name="ngModel" [(ngModel)]="employeeService.selectedEmployee.fecha" placeholder="Fecha">
+                                                        <input class="form-control" type="date" name="fecha" value="employeeService.selectedEmployee.fecha" placeholder="Fecha">
                                                     </div>
                                                     <div class="input-field col-s12">
                                                         <label for="formGroupExampleInput">Perfil</label>

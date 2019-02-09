@@ -8,6 +8,8 @@ import { NgForm } from '@angular/forms';
 import { Entrada } from '../../models/entrada';
 // Plugins de alerta de popup
 import swal from 'sweetalert';
+import { TarjetasService } from 'src/app/services/tarjetas/tarjetas.service';
+import { Tarjetas } from 'src/app/models/tarjetas.model';
 
 @Component({
   selector: 'app-entrada',
@@ -17,71 +19,26 @@ import swal from 'sweetalert';
 })
 export class EntradaComponent implements OnInit {
   interval: NodeJS.Timer;
+  tarjetas: Tarjetas[] = [];
+  desde: number = 0;
+  totalRegistro: number = 0;
 
   // tslint:disable-next-line:no-shadowed-variable
-  constructor(public entradaService: EntradaService) { }
+  constructor(public _tarjetasService: TarjetasService) { }
 
   ngOnInit() {
-    this.getEntradas();
-  }
-  addEntrada(form?: NgForm) {
-    console.log(form.value);
-    if (form.value._id) {
-      this.entradaService.putEntrada(form.value)
-        .subscribe(res => {
-          this.resetForm(form);
-          this.getEntradas();
-          swal('Todo atualizado', '!', 'success');
-        });
-    } else {
-      this.entradaService.postEntrada(form.value)
-      .subscribe(res => {
-        this.getEntradas();
-        this.resetForm(form);
-        swal('Todo atualizado', '!', 'success');
-      });
-    }
-
-  }
-
-  getEntradas() {
-    this.entradaService.getEntradas()
-      .subscribe(res => {
-        this.entradaService.entradaas = res as Entrada[];
-        console.log('funcionando');
-      });
-  }
-  abrirPorta() {
-    this.entradaService.abrirPorta()
-      .subscribe(res => {
-        console.log('funcionando');
-      });
-    }
-
-  editEntrada(entrada: Entrada) {
-    this.entradaService.selectedEntrada = entrada;
-    console.log('click funcionando');
-  }
-
-  deleteEntrada(_id: string, form: NgForm) {
-    if (confirm('Are you sure you want to delete it?')) {
-      this.entradaService.deleteEntrada(_id)
-        .subscribe(res => {
-          this.getEntradas();
-          this.resetForm(form);
-          swal('Eliminado', '!', 'success');
-        });
-    }
-  }
-
-  resetForm(form?: NgForm) {
-    if (form) {
-      form.reset();
-      this.entradaService.selectedEntrada = new Entrada();
-    }
+    this.listarEntradas();
   }
 
 
-  // final
+  listarEntradas() {
+    this._tarjetasService.listarTarjetas( this.desde )
+  .subscribe((resp: any) => {
+    console.log(resp);
+
+    this.totalRegistro = resp.total;
+    this.tarjetas = resp.tarjeta;
+  });
+  }
 }
 
