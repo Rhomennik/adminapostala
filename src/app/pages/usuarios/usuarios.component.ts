@@ -76,6 +76,15 @@ export class UsuariosComponent implements OnInit {
     });
 
   }
+  nuevosUsuarios(termino: string) {
+
+    this._usuarioService.buscaarUsuarios( termino )
+    .subscribe((usuarios: Usuario[]) => {
+      this.usuarios =  usuarios;
+     // console.log(usuarios);
+    });
+
+  }
 
   borrarUsuario( usuario: Usuario) {
      console.log(usuario);

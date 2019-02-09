@@ -213,6 +213,12 @@ return this.http.get(url);
      .pipe(map((resp: any) => resp.usuarios));
    }
 
+   buscaarUsuarios( termino: string) {
+    const url = URL_SERVICIOS + '/busqueda/coleccion/usuarios/NORMAL_USER';
+    return this.http.get(url)
+    .pipe(map((resp: any) => resp.usuarios));
+  }
+
    borrarUsuario(_id: string) {
      let url = URL_SERVICIOS + '/usuario/' + _id;
      url += '?token=' + this.token;
