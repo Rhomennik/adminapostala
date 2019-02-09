@@ -57,6 +57,7 @@ export class MedicoComponent implements OnInit {
     .subscribe( medico => {
       this.medico._id = medico._id;
       this.router.navigate(['/medico', medico._id]);
+      console.log('deubom');
     });
 
   }

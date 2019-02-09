@@ -1,0 +1,32 @@
+<div class="card">
+    <div class="card-body">
+        <h4 class="card-title"><span class="lstick"></span>Sucursal: {{sucursal.nombre}}</h4>
+        <form #f="ngForm" ngNativeValidate (ngSubmit)="guardarSucursal(f)" class="form-material m-t-40">
+            <div class="form-group">
+                <label class="text-themecolor">Nombre Sucursal</label>
+                <input [(ngModel)]="sucursal.nombre" name="nombre" type="text" class="form-control" placeholder="Nombre del la sucursal.."> </div>
+            <div class="form-group">
+                <label class="text-themecolor">Vpn Sucursal</label>
+                <input [(ngModel)]="sucursal.vpn" name="vpn" type="text" class="form-control" placeholder="Vpn.."> </div>
+            <div class="form-group">
+                <label class="text-themecolor">Ippublico Sucursal</label>
+                <input [(ngModel)]="sucursal.ippublico" name="ippublico" type="text" class="form-control" placeholder="Ippublico.."> </div>
+            <div class="form-group">
+                <label class="text-themecolor">Lat Sucursal</label>
+                <input [(ngModel)]="sucursal.lat" name="lat" type="text" class="form-control" placeholder="Lat.."> </div>
+            <div class="form-group">
+                <label class="text-themecolor">Long Sucursal</label>
+                <input [(ngModel)]="sucursal.long" name="long" type="text" class="form-control" placeholder="Long..">
+            </div>
+            <div class="form-group">
+                <label class="text-themecolor">Telefono Sucursal</label>
+                <input [(ngModel)]="sucursal.telefono" name="telefono" type="text" class="form-control" placeholder="Telefono.."> </div>
+
+            <button type="submit" class="btn btn-success waves-effect waves-light m-r-10">
+                    <i class="fa fa-save"></i>
+                    Guardar</button>
+            <button routerLink="/sucursal" class="btn btn-inverse waves-effect waves-light">
+                  Cancelar</button>
+        </form>
+    </div>
+</div>

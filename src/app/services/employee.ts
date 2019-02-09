@@ -35,7 +35,7 @@ export class EmployeeService {
   }
 
   buscarTarjeta(termino: string) {
-    let url = URL_SERVICIOS + '/busqueda/coleccion/tarjetas/' + termino;
+    const url = URL_SERVICIOS + '/busqueda/coleccion/tarjetas/' + termino;
     return this.http.get(url)
     .pipe(map((resp: any) => resp.tarjetas));
   }

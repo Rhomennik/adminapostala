@@ -6,12 +6,15 @@ import { Graficas1Component } from './graficas1/graficas1.component';
 import { AccountSettingsComponent } from './account-settings/account-settings.component';
 import { PromesasComponent } from './promesas/promesas.component';
 import { RxjsComponent } from './rxjs/rxjs.component';
-import { MaquinasComponent } from './maquinas/maquinas.component';
 // Guards
 import { LoginGuardGuard } from '../services/service.index';
 import { AdminGuard } from '../services/service.index';
 import { NormalGuard } from '../services/guards/normal.guard';
 
+// maquinas
+import { MaquinasComponent } from './maquinas/maquinas.component';
+import { SucursalComponent } from './sucursal/sucursal.component';
+import { SucursaComponent } from './sucursal/sucursa.component';
 
 import { ProfileComponent } from './profile/profile.component';
 import { EmployeeComponent } from './employee/employee.component';
@@ -31,6 +34,9 @@ const pagesRoutes: Routes = [
             { path: 'progress', component: ProgressComponent, data: { titulo: 'Progress' }},
             { path: 'graficas1', component: Graficas1Component, data: { titulo: 'Graficas' }},
             { path: 'promesas', component: PromesasComponent, data: { titulo: 'Promesas' }},
+            // Maquinas
+            { path: 'sucursal', component: SucursalComponent, data: { titulo: 'Sucursal', canActivate: [ AdminGuard ] }},
+            { path: 'sucursa/:id', component: SucursaComponent, data: { titulo: 'Atualizar Sucursal', canActivate: [ AdminGuard ] }},
             { path: 'maquinas', component: MaquinasComponent, data: { titulo: 'Maquinas', canActivate: [ AdminGuard ] }},
             // Puerta
             { path: 'entrada', component: EntradaComponent, data: { titulo: 'Entradas', canActivate: [ AdminGuard ] }},

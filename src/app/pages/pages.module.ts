@@ -33,6 +33,8 @@ import { HospitalesComponent } from './hospitales/hospitales.component';
 import { MedicosComponent } from './medicos/medicos.component';
 import { MedicoComponent } from './medicos/medico.component';
 import { BusquedaComponent } from './busqueda/busqueda.component';
+import { SucursalComponent } from './sucursal/sucursal.component';
+import { SucursaComponent } from './sucursal/sucursa.component';
 
 
 
@@ -58,7 +60,9 @@ import { BusquedaComponent } from './busqueda/busqueda.component';
     HospitalesComponent,
     MedicosComponent,
     MedicoComponent,
-    BusquedaComponent
+    BusquedaComponent,
+    SucursalComponent,
+    SucursaComponent
     ],
     // exportando para poder usar em outros lugares
     exports: [

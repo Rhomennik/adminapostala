@@ -19,11 +19,10 @@ export class MaquinasComponent implements OnInit {
     ) { }
 
   ngOnInit() {
-    this.CalculoOff();
     this.listarMaquinas();
-   // this.interval = setInterval(() => {
-   //   this.listagem();
-   // }, 5000);
+    this.interval = setInterval(() => {
+      this.listarMaquinas();
+    }, 5000);
 
   }
 
@@ -36,30 +35,12 @@ export class MaquinasComponent implements OnInit {
 
   }
 
-  teste( maquinaaas: Maquinas ) {
-    // Hora atual
-    const date = require('date-and-time');
-    const now = new Date();
-    const Atual = date.format(now, 'YYYY-MM-DD HH:mm:ss');
-    const final = tiempo.format(maquinaaas.updatedAt, Atual);
-    console.log( final );
-    return Atual;
-
+  buscarMaquinas( termino: string ) {
+this._maquinasService.buscarMaquinas(termino)
+.subscribe( (maquinas: Maquinas[]) => {
+  this.maquinas = maquinas;
+  console.log(maquinas);
+});
   }
-  HoraAtual() {
-  }
-  CalculoOff() {
-
-    $(function() {
-      const date = require('date-and-time');
-      const now = new Date();
-      const Atual = date.format(now, 'YYYY-MM-DD HH:MM:SS');
-
-      const texto =  $('#idDaTabela tr:nth-child(1) td:nth-child(6)').text();
-      const result = (texto);
-      const a = tiempo.format(Atual, result);
-  });
-  }
-
 
 }

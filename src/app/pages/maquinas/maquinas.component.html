@@ -1,5 +1,15 @@
 <h1> LINUX Aposta.la <span class="badge badge-secondary">{{totalRegistros}}</span></h1>
+<div class="row animated fadeIn">
+    <div class="col-12">
+        <div class="card">
+            <div class="card-body">
 
+                <input #input (keyup)="buscarMaquinas( input.value )" type="text" class="form-control" placeholder="Buscar usuario...">
+
+            </div>
+        </div>
+    </div>
+</div>
 <div class="row animated fadeIn">
     <div class="col-sm-12">
         <div class="card">
@@ -11,28 +21,27 @@
                             <th scope="col">Ip-Local</th>
                             <th scope="col">Ip-Publica</th>
                             <th scope="col">Mac</th>
-                            <th scope="col">Offline/Min</th>
-                            <th scope="col">Offline/Min2</th>
+                            <th scope="col">UpdatedAt</th>
+                            <th scope="col">Sucursal</th>
                             <th scope="col" align="right">Screenshot</th>
                             <!--   
-                                
                                 <th scope="col">Status</th>
                             -->
                         </tr>
                     </thead>
+
                     <tbody>
                         <tr *ngFor="let maq of maquinas">
                             <td>{{ maq.uptime }}</td>
                             <td>{{ maq.iplocal }}</td>
-                            <td>{{ maq.ippublica }}</td>
+                            <td>{{ maq.ippublico }}</td>
                             <td>{{ maq.mac }}</td>
-                            <td></td>
                             <td>{{ maq.updatedAt}}</td>
+                            <td>{{ maq.sucursals.nombre }}</td>
                             <td>
                                 <a href="http://localhost:3000/img/maquinas/{{ maq.img }}"><img src="http://localhost:3000/img/maquinas/{{ maq.img }}" class="image-popup-no-margins" height="80" width="80"></a>
                                 <td>
                                 </td>
-                                {{CalculoOff()}}
                         </tr>
                     </tbody>
                 </table>
