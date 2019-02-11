@@ -6,7 +6,7 @@ export class Maquinas {
         public iplocal?: string,
         public _id?: string,
         public updatedAt?: string,
-        public img?: String,
+        public img?: string,
         public sucursals?: String
 
     ) {}

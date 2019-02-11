@@ -22,7 +22,7 @@ export class MaquinasComponent implements OnInit {
     this.listarMaquinas();
     this.interval = setInterval(() => {
       this.listarMaquinas();
-    }, 5000);
+    }, 30000);
 
   }
 
