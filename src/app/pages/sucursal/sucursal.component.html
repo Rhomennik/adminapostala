@@ -34,8 +34,6 @@
                             <th>Nombre</th>
                             <th>Vpn</th>
                             <th>Ippublico</th>
-                            <th>Lat</th>
-                            <th>Long</th>
                             <th>Telefono</th>
                             <th>Opciones</th>
                     </thead>
@@ -44,8 +42,6 @@
                             <td>{{ suc.nombre}}</td>
                             <td>{{ suc.vpn }}</td>
                             <td>{{ suc.ippublico }}</td>
-                            <td>{{ suc.lat }}</td>
-                            <td>{{ suc.long }}</td>
                             <td>{{ suc.telefono }}</td>
                             <td>
                                 <button [routerLink]="['/sucursa', suc._id]" class="btn btn-primary">

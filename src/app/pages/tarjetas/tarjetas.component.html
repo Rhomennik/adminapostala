@@ -19,15 +19,9 @@
         <div class="card">
             <div class="card-body table-responsive">
 
-                <h3 class="card-title">Sucursales registradas: <small class="label label-inverse label-rounded">{{ totalRegistro }}</small></h3>
+                <h3 class="card-title">Tarjetas Registradas: <small class="label label-inverse label-rounded">{{ totalRegistro }}</small></h3>
 
                 <div class="text-right">
-
-                    <button type="button" class="btn waves-effect waves-light btn-rounded btn-inverse">
-        <i class="fa fa-map-marker">
-            Crear Sucursal
-        </i>
-    </button>
                 </div>
 
                 <table class="table">
@@ -47,7 +41,6 @@
                                 <input [(ngModel)]="tarje.cliente" type="text" class="form-control" placeholder="Modificar cliente.....">
                             </td>
                             <td>{{ tarje.perfil }}</td>
-                            <br>
                             <td>{{ tarje.contador }}</td>
                             <td>{{ tarje.fecha }}</td>
                             <td>

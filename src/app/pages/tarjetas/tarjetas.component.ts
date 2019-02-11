@@ -13,12 +13,16 @@ export class TarjetasComponent implements OnInit {
   tarjetas: Tarjetas[] = [];
   desde: number = 0;
   totalRegistro: number = 0;
+  interval: NodeJS.Timer;
   constructor(
     public _tarjetasService: TarjetasService
   ) { }
 
   ngOnInit() {
     this.listarTarjeta();
+    this.interval = setInterval(() => {
+      this.listarTarjeta();
+    }, 30000);
   }
 
 

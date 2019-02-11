@@ -28,6 +28,9 @@ export class EntradaComponent implements OnInit {
 
   ngOnInit() {
     this.listarEntradas();
+    this.interval = setInterval(() => {
+      this.listarEntradas();
+    }, 5000);
   }
 
 
