@@ -4,8 +4,7 @@ import { Usuario } from 'src/app/models/usuario.model';
 import { withLatestFrom } from 'rxjs/operators';
 @Component({
   selector: 'app-profile',
-  templateUrl: './profile.component.html',
-  styles: []
+  templateUrl: './profile.component.html'
 })
 export class ProfileComponent implements OnInit {
 
