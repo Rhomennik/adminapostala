@@ -42,11 +42,11 @@
                 <img *ngIf="imagenTemp" [src]="imagenTemp" class="w150">
                 <br>
 
-                <input id="klauman" (change)="seleccionImagen( $event.target.files[0] )" type="file" aling="center">
+                <input (change)="seleccionImagen( $event.target.files[0] )" type="file" aling="center">
                 <br>
                 <br>
 
-                <button (click)="cambiarImagen()" [disabled]="!imagenSubir" type="button" class="btn btn-block btn-success waves-effect waves-light m-r-10 custom-file-input">
+                <button (click)="cambiarImagen()" [disabled]="!imagenSubir" type="button" class="btn btn-block btn-success waves-effect waves-light m-r-10">
                     <i class="fa fa-save"></i>  
                       Atualizar Foto
                     </button>
