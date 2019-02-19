@@ -7,6 +7,8 @@ import { Router } from '@angular/router';
 import { SubirArchivoService } from '../subir-archivo/subir-archivo.service';
 import { throwError, empty } from 'rxjs';
 import {Observable} from 'rxjs/Observable';
+
+import Swal from 'sweetalert2';
 @Injectable({
   providedIn: 'root'
 })
