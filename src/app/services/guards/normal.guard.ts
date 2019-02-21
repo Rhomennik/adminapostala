@@ -18,10 +18,10 @@ export class NormalGuard implements CanActivate {
     if (this._usuarioService.usuario.role === 'ADMIN_ROLE') {
       return true;
     } else {
-        console.log('Baaloqueado por el ADMIN GUARD');
+        console.log('Bloqueado por el ADMIN GUARD');
     }
 
-    this._usuarioService.logout();
+   this._usuarioService.logout();
     swal ( 'Alerta' ,  'No estas autorizado' ,  'error' );
     return true;
   }

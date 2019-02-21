@@ -105,7 +105,7 @@ loginGoogle( token: string ) {
 
   return this.http.post( url, { token } )
                 .pipe(map ((resp: any) => {
-                  console.log(resp);
+                 // console.log(resp);
                   this.guardarStorage( resp.id, resp.token, resp.usuario, resp.menu );
                   return true;
                 }));

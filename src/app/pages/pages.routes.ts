@@ -36,13 +36,12 @@ const pagesRoutes: Routes = [
             { path: 'graficas1', component: Graficas1Component, data: { titulo: 'Graficas' }},
             { path: 'promesas', component: PromesasComponent, data: { titulo: 'Promesas' }},
             // Maquinas
-            { path: 'sucursal', component: SucursalComponent, data: { titulo: 'Sucursal', canActivate: [ AdminGuard ] }},
-            { path: 'sucursa/:id', component: SucursaComponent, data: { titulo: 'Atualizar Sucursal', canActivate: [ AdminGuard ] }},
-            { path: 'maquinas', component: MaquinasComponent, data: { titulo: 'Maquinas', canActivate: [ AdminGuard ] }},
+            { path: 'sucursa/:id', component: SucursaComponent, canActivate: [ AdminGuard ], data: { titulo: 'Atualizar Sucursal' }},
+            { path: 'maquinas', component: MaquinasComponent, canActivate: [ AdminGuard ], data: { titulo: 'Maquinas' }},
             // Puerta
-            { path: 'entrada', component: EntradaComponent, data: { titulo: 'Entradas', canActivate: [ AdminGuard ] }},
-           // { path: 'tarjetas', component: EmployeeComponent, data: { titulo: 'Tarjetas', canActivate: [ AdminGuard ] }},
-            { path: 'tarjetas', component: TarjetasComponent, data: { titulo: 'Tarjetas', canActivate: [ AdminGuard ] }},
+            { path: 'entrada', component: EntradaComponent,  canActivate: [ AdminGuard ], data: { titulo: 'Entradas' }},
+            // { path: 'tarjetas', component: EmployeeComponent, data: { titulo: 'Tarjetas', canActivate: [ AdminGuard ] }},
+            { path: 'tarjetas', component: TarjetasComponent, canActivate: [ AdminGuard ], data: { titulo: 'Tarjetas' }},
 
             { path: 'rxjs', component: RxjsComponent, data: { titulo: 'RXJS' }},
             { path: 'account-settings', component: AccountSettingsComponent, data: { titulo: 'Color-Sistema'}, canActivate: [ AdminGuard ]},
@@ -55,10 +54,16 @@ const pagesRoutes: Routes = [
                 canActivate: [ AdminGuard ],
                 data: { titulo: 'Usuarios' }},
 
-            // Mantenimientos
-            { path: 'hospitales', component: HospitalesComponent, data: { titulo: 'Hospitales' }, canActivate: [ AdminGuard ]},
-            { path: 'medicos', component: MedicosComponent, data: { titulo: 'Medicos' }, canActivate: [ AdminGuard ]},
-            { path: 'medico/:id', component: MedicoComponent, data: { titulo: 'Actualizar Medico' }, canActivate: [ AdminGuard ]},
+                // Mantenimientos
+                    {
+                        path: 'sucursal',
+                        component: SucursalComponent,
+                        canActivate: [ AdminGuard ],
+                        data: { titulo: 'Sucursal', }
+                    },
+       //     { path: 'hospitales', component: HospitalesComponent,  canActivate: [ AdminGuard ], data: { titulo: 'Hospitales' }},
+      //     { path: 'medicos', component: MedicosComponent, data: { titulo: 'Medicos' }, canActivate: [ AdminGuard ]},
+      //      { path: 'medico/:id', component: MedicoComponent, data: { titulo: 'Actualizar Medico' }, canActivate: [ AdminGuard ]},
             { path: '', redirectTo: '/dashboard', pathMatch: 'full', canActivate: [ AdminGuard ] }
 ];
 export const PAGES_ROUTES = RouterModule.forChild( pagesRoutes );
