@@ -38,7 +38,7 @@ export class UsuarioService {
 
         this.token = resp.token;
         localStorage.setItem('token', this.token );
-        console.log('Token Renovado');
+       // console.log('Token Renovado');
         return true;
      }),
      catchError( (err: any) => {
@@ -48,7 +48,7 @@ export class UsuarioService {
         text: 'No se pudo borrar el Token',
         icon: 'error',
       });
-        console.log(err.error.mensaje);
+      //  console.log(err.error.mensaje);
         return new Observable<any>();
      }));
    }
@@ -105,6 +105,7 @@ loginGoogle( token: string ) {
 
   return this.http.post( url, { token } )
                 .pipe(map ((resp: any) => {
+                  console.log(resp);
                   this.guardarStorage( resp.id, resp.token, resp.usuario, resp.menu );
                   return true;
                 }));
@@ -131,7 +132,7 @@ login( usuario: Usuario, recordar: boolean= false ) {
   const url = URL_SERVICIOS + '/login';
   return this.http.post( url, usuario)
         .pipe(map( (resp: any) => {
-          console.log(resp);
+         // console.log(resp);
           this.guardarStorage( resp.id, resp.token, resp.usuario, resp.menu );
           return true;
         }),
@@ -141,7 +142,7 @@ login( usuario: Usuario, recordar: boolean= false ) {
           text: err.error.mensaje,
           icon: 'error',
         });
-          console.log(err.error.mensaje);
+        //  console.log(err.error.mensaje);
           return new Observable<any>();
        })
      );
@@ -198,13 +199,14 @@ return this.http.post(url, usuario)
       this.guardarStorage( id, this.token, this.usuario, this.menu );
      })
      .catch( resp => {
-       console.log (resp);
+     //  console.log (resp);
      });
    }
 
    cargarUsuarios( desde: number = 0) {
 
-  const url = URL_SERVICIOS + '/usuario?desde=' + desde;
+  let url = URL_SERVICIOS + '/usuario/' + desde;
+  url += '/?token=' + this.token;
 return this.http.get(url);
 
    }

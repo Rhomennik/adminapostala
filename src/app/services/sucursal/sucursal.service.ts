@@ -33,13 +33,14 @@ export class SucursalService {
 
 
   cargarSucursal( desde: number = 0) {
-   const url = URL_SERVICIOS + '/sucursal?desde=' + desde;
+   let url = URL_SERVICIOS + '/sucursal/' + desde;
+   url += '?token=' + this._usuarioService.token;
    return this.http.get(url);
   }
 
   guardarSucursal(sucursa: Sucursals) {
 
-    let url = URL_SERVICIOS + '/sucursal/';
+    let url = URL_SERVICIOS + '/sucursal';
 
 
     if (sucursa._id) {
@@ -79,9 +80,10 @@ export class SucursalService {
       }));
 
   }
-
+  // If for NAVIGATE TO SUCURSA PER EDIT
   editarSucursal( id: String ) {
-    const url = URL_SERVICIOS + '/sucursal/' + id;
+    let url = URL_SERVICIOS + '/sucursal/' + id;
+    url += '?token=' + this._usuarioService.token;
     return this.http.get(url)
     .pipe(map((resp: any) => resp.sucursal));
   }

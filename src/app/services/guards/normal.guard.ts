@@ -22,7 +22,7 @@ export class NormalGuard implements CanActivate {
     }
 
     this._usuarioService.logout();
-    swal ( 'Alerta' ,  'No estas autorizado, El administrador sabra que querias entrar donde no debes' ,  'error' );
+    swal ( 'Alerta' ,  'No estas autorizado' ,  'error' );
     return true;
   }
 }

@@ -16,6 +16,7 @@ export class LoginComponent implements OnInit {
   email: string;
   recuerdame: boolean = false;
   auth2: any;
+  cargando: boolean = true;
   constructor(
     public router: Router,
     public _UsuarioService: UsuarioService
@@ -48,25 +49,23 @@ export class LoginComponent implements OnInit {
 
 attachSignin( element ) {
   this.auth2.attachClickHandler( element, {}, (googleUser) => {
-   // const profile = googleUser.getBasicProfile();
+   //  TESTES const profile = googleUser.getBasicProfile();
    const token = googleUser.getAuthResponse().id_token;
+  // TESTES console.log( profile, token );
 
    this._UsuarioService.loginGoogle( token )
   .subscribe ( () => window.location.href = '#/dashboard');
 
-   //  console.log( profile );
   } );
 }
      ingresar( forma: NgForm ) {
        if ( forma.invalid ) {
          return;
        }
-      const usuario = new Usuario(null, forma.value.email, forma.value.password);
+       const usuario = new Usuario(null, forma.value.email, forma.value.password);
 
-      this._UsuarioService.login( usuario, forma.value.recuerdame)
-      .subscribe( correcto => this.router.navigate(['/dashboard']));
-
-
+       this._UsuarioService.login( usuario, forma.value.recuerdame)
+       .subscribe( correcto => this.router.navigate(['/dashboard']));
      // this.router.navigate(['/dashboard']);
      // console.log('ingresando');
     }

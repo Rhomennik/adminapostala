@@ -16,7 +16,8 @@ export class TarjetasService {
 
   listarTarjetas( desde: number = 0) {
 
-    const url = URL_SERVICIOS + '/tarjeta?desde=' + desde;
+    let url = URL_SERVICIOS + '/tarjeta/' + desde;
+    url += '?token=' + this._usuarioService.token;
   return this.http.get(url);
 
      }
