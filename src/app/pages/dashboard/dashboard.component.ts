@@ -4,6 +4,7 @@ import { Component, OnInit } from '@angular/core';
 import { UsuarioService } from '../../services/usuario/usuario.service';
 import { Usuario } from '../../models/usuario.model';
 
+import { Stream } from 'node-rtsp-stream';
 
 // importar Servico de reqqs para o backend
 import { EntradaService } from '../../services/entrada';
@@ -25,19 +26,24 @@ export class DashboardComponent implements OnInit {
   ngOnInit() {
     this.cargarUsuario();
   }
+
+
+// Abrir a porta do piso 9
   abrirPorta() {
-    this.entradaService.abrirPorta()
-      .subscribe(res => {
-        console.log('funcionando');
+   this.entradaService.abrirPorta()
+    .subscribe(res => {
+     console.log('funcionando');
       });
     }
 
+    // Contando Usuarios
     cargarUsuario() {
       this._usuarioService.cargarUsuarios()
       .subscribe((resp: any) => {
         this.totalRegistros = resp.total;
       });
 
-    }
+   }
 
-  }
+}
+

@@ -30,7 +30,7 @@ listarTarjeta() {
 
   this._tarjetasService.listarTarjetas( this.desde )
   .subscribe((resp: any) => {
-    console.log(resp);
+  //  console.log(resp);
 
     this.totalRegistro = resp.total;
     this.tarjetas = resp.tarjeta;

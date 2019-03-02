@@ -1,14 +1,25 @@
 <div class="row animated fadeIn"></div>
-<div class="card-group">
+<div class="col-lg-4">
     <div class="card">
         <div class="card-body">
-            <h3 class="card-title">Puerta Piso nueve</h3>
+            <h3 class="card-title"><span class="lstick"></span>Puerta: Piso 9</h3>
             <h6 class="card-subtitle">No te olvides de cerrar la puerta al entrar/salir</h6>
             <div class="row justify-content-center animated fadeIn">
                 <div class="col-15">
                     <button class="slk" (click)="abrirPorta()"></button>
                 </div>
             </div>
+        </div>
+    </div>
+</div>
+
+<div class="col-lg-3 col-md-12">
+    <div class="card">
+        <div class="card-body">
+            <h4 class="card-title"><span class="lstick"></span>Camara</h4>
+
+            <video id="video" src="http://192.168.9.40:8080" autoplay="autoplay"></video>
+
         </div>
     </div>
 </div>
@@ -26,3 +37,5 @@
         </div>
     </div>
 </div>
+
+<button class="btn btn-default" (click)="toast()">Toastr Tester</button>

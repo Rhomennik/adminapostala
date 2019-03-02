@@ -36,3 +36,8 @@
     /* default text of the accordion item */
     content: "Abrir";
 }
+
+video {
+    width: 100%;
+    height: auto;
+}

@@ -22,11 +22,12 @@ export class ProfileComponent implements OnInit {
 
   }
       guardar( usuario: Usuario) {
+        console.log('1');
         this.usuario.nombre = usuario.nombre;
         if ( !this.usuario.google ) {
           this.usuario.email = usuario.email;
         }
-
+        console.log('2');
         this._usuarioService.actualizarUsuario( this.usuario );
 
   }

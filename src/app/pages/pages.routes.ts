@@ -61,9 +61,9 @@ const pagesRoutes: Routes = [
                         canActivate: [ AdminGuard ],
                         data: { titulo: 'Sucursal', }
                     },
-       //     { path: 'hospitales', component: HospitalesComponent,  canActivate: [ AdminGuard ], data: { titulo: 'Hospitales' }},
-      //     { path: 'medicos', component: MedicosComponent, data: { titulo: 'Medicos' }, canActivate: [ AdminGuard ]},
-      //      { path: 'medico/:id', component: MedicoComponent, data: { titulo: 'Actualizar Medico' }, canActivate: [ AdminGuard ]},
+            { path: 'hospitales', component: HospitalesComponent,  canActivate: [ AdminGuard ], data: { titulo: 'Hospitales' }},
+           { path: 'medicos', component: MedicosComponent, data: { titulo: 'Medicos' }, canActivate: [ AdminGuard ]},
+            { path: 'medico/:id', component: MedicoComponent, data: { titulo: 'Actualizar Medico' }, canActivate: [ AdminGuard ]},
             { path: '', redirectTo: '/dashboard', pathMatch: 'full', canActivate: [ AdminGuard ] }
 ];
 export const PAGES_ROUTES = RouterModule.forChild( pagesRoutes );

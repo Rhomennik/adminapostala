@@ -18,8 +18,9 @@ export class MedicoService {
     public _usuarioService: UsuarioService
   ) { }
 
-  cargarMedicos() {
-    const url = URL_SERVICIOS + '/medico';
+  cargarMedicos(desde: number = 0) {
+    let url = URL_SERVICIOS + '/medico/' + desde;
+    url += '/?token=' + this._usuarioService.token;
     return this.http.get(url)
             .pipe(map(( resp: any) => {
               this.totalMedicos = resp.total;
@@ -76,6 +77,7 @@ guardarMedico(medico: Medico) {
 }
 
 cargarMedico(id: string) {
+
 
   const url = URL_SERVICIOS + '/medico/' + id;
   return this.http.get(url)
