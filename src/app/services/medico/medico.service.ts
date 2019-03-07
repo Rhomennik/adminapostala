@@ -48,7 +48,7 @@ borrarMedico(_id: String) {
 
 guardarMedico(medico: Medico) {
 
-  let url = URL_SERVICIOS + '/medico/';
+  let url = URL_SERVICIOS + '/medico';
 
   if ( medico._id) {
     // atualizando
@@ -77,9 +77,7 @@ guardarMedico(medico: Medico) {
 }
 
 cargarMedico(id: string) {
-
-
-  const url = URL_SERVICIOS + '/medico/' + id;
+  const url = URL_SERVICIOS + '/medico/id/' + id;
   return this.http.get(url)
         .pipe(map( (resp: any) => resp.medico));
 }

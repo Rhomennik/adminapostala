@@ -31,10 +31,17 @@ export class SucursalService {
     .pipe(map((resp: any) => resp.sucursal));
   }
 
+  cargarDepartamentos( desde: number = 0 ) {
+    const url = URL_SERVICIOS + '/departamentos/desde/' + desde;
+   // console.log('URL : ????????', url);
+    return this.http.get(url);
+  }
 
+ // Este es para listar LAs Sucursales
   cargarSucursal( desde: number = 0) {
    let url = URL_SERVICIOS + '/sucursal/' + desde;
    url += '?token=' + this._usuarioService.token;
+  // console.log('URL : ????????', url);
    return this.http.get(url);
   }
 
@@ -82,10 +89,9 @@ export class SucursalService {
   }
   // If for NAVIGATE TO SUCURSA PER EDIT
   editarSucursal( id: String ) {
-    let url = URL_SERVICIOS + '/sucursal/' + id;
-    url += '?token=' + this._usuarioService.token;
+    const url = URL_SERVICIOS + '/sucursal/id/' + id;
     return this.http.get(url)
-    .pipe(map((resp: any) => resp.sucursal));
+    .pipe(map((resp: any)  => resp.sucursal ));
   }
 
 
