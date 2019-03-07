@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 
+// KANBAN
+import {DayPilotKanbanComponent} from 'daypilot-pro-angular';
+
 // Importanto servico  E MODELO de usuario apra Conteo de Total usuarios
 import { UsuarioService } from '../../services/usuario/usuario.service';
 import { Usuario } from '../../models/usuario.model';
@@ -15,7 +18,6 @@ import { EntradaService } from '../../services/entrada';
   providers: [EntradaService]
 })
 export class DashboardComponent implements OnInit {
-
   // Conta total de usuarios variaveis
   usuarios: Usuario[] = [];
   totalRegistros: number = 0;

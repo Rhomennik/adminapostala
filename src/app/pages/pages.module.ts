@@ -38,6 +38,10 @@ import { SucursalComponent } from './sucursal/sucursal.component';
 import { SucursaComponent } from './sucursal/sucursa.component';
 
 
+// Kanban
+import {DayPilotModule} from 'daypilot-pro-angular';
+
+
 
 
 
