@@ -40,10 +40,10 @@
                     </thead>
                     <tbody>
                         <tr *ngFor="let suc of sucursal">
-                            <td>{{ suc.nombre}}</td>
-                            <td>{{ suc.vpn }}</td>
-                            <td>{{ suc.ippublico }}</td>
-                            <td>{{ suc.telefono }}</td>
+                            <td>{{suc.nombre}}</td>
+                            <td>{{suc.vpn }}</td>
+                            <td>{{suc.ippublico }}</td>
+                            <td>{{suc.telefono }}</td>
                             <td>{{suc.departamentos.nombre}}</td>
                             <td>
                                 <button [routerLink]="['/sucursa', suc._id]" class="btn btn-primary">
