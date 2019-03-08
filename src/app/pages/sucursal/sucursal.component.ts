@@ -27,11 +27,11 @@ export class SucursalComponent implements OnInit {
 
     this._sucursalService.cargarSucursal( this.desde)
     .subscribe((resp: any) => {
-      const a = this.sucursal = resp.sucursal;
       this.totalRegistro = resp.total;
       // Entao o resp.xxxx => a resposta tem que ser igual ao que vem do backend ej: "sucursals": [] "  Entao seria resp.sucursals
       this.sucursal = resp.sucursals;
-console.log(a);
+      const a = this.sucursal = resp.sucursals;
+  console.log(a);
     });
 
   }

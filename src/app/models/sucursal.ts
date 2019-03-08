@@ -8,7 +8,8 @@ export class Sucursals {
         public telefono?: String,
         public img?: String,
         public ippublico?: String,
-        public _id?: string
+        public _id?: string,
+        public departamentos?: any
     ) { }
 
 }
