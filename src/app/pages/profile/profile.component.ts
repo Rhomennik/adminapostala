@@ -21,15 +21,15 @@ export class ProfileComponent implements OnInit {
   ngOnInit() {
 
   }
-      guardar( usuario: Usuario) {
-        console.log('1');
-        this.usuario.nombre = usuario.nombre;
-        if ( !this.usuario.google ) {
-          this.usuario.email = usuario.email;
-        }
-        console.log('2');
-        this._usuarioService.actualizarUsuario( this.usuario );
+  guardar( usuario: Usuario ) {
 
+    this.usuario.nombre = usuario.nombre;
+    if ( !this.usuario.google ) {
+      this.usuario.email = usuario.email;
+    }
+
+    this._usuarioService.actualizarUsuario( this.usuario )
+                .subscribe();
   }
 
   seleccionImagen( archivo: File) {

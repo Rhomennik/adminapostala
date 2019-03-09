@@ -40,6 +40,7 @@ import { SucursaComponent } from './sucursal/sucursa.component';
 
 // Kanban
 import {DayPilotModule} from 'daypilot-pro-angular';
+import { PlayersComponent } from './players/players.component';
 
 
 
@@ -69,7 +70,8 @@ import {DayPilotModule} from 'daypilot-pro-angular';
     BusquedaComponent,
     SucursalComponent,
     SucursaComponent,
-    TarjetasComponent
+    TarjetasComponent,
+    PlayersComponent
     ],
     // exportando para poder usar em outros lugares
     exports: [

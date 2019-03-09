@@ -16,7 +16,7 @@
                                     <div class="form-group">
                                         <label>Hospital</label>
                                         <select (change)="cambioHospital( $event.target.value )" [(ngModel)]="medico.hospital" name="hospital" class="form-control">
-                                            <option value="">Seleccione un Hospital</option>
+                                                <option value="">Seleccione un Hospital</option>
                                           <option *ngFor="let hospital of hospitales" value="{{ hospital._id }}">{{ hospital.nombre }}</option>
                                         </select>
                                     </div>

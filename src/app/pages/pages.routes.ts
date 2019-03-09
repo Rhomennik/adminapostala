@@ -26,6 +26,7 @@ import { MedicoComponent } from './medicos/medico.component';
 import { BusquedaComponent } from './busqueda/busqueda.component';
 import { VerificaTokenGuard } from '../services/guards/verifica-token.guard';
 import { TarjetasComponent } from './tarjetas/tarjetas.component';
+import { PlayersComponent } from './players/players.component';
 const pagesRoutes: Routes = [
             {
                 path: 'dashboard',
@@ -43,6 +44,7 @@ const pagesRoutes: Routes = [
             // { path: 'tarjetas', component: EmployeeComponent, data: { titulo: 'Tarjetas', canActivate: [ AdminGuard ] }},
             { path: 'tarjetas', component: TarjetasComponent, canActivate: [ AdminGuard ], data: { titulo: 'Tarjetas' }},
 
+
             { path: 'rxjs', component: RxjsComponent, data: { titulo: 'RXJS' }},
             { path: 'account-settings', component: AccountSettingsComponent, data: { titulo: 'Color-Sistema'}, canActivate: [ AdminGuard ]},
             { path: 'perfil', component: ProfileComponent, data: { titulo: 'Perfil del Usuario' }, canActivate: [ NormalGuard ]},
@@ -53,8 +55,6 @@ const pagesRoutes: Routes = [
                 component: UsuariosComponent,
                 canActivate: [ AdminGuard ],
                 data: { titulo: 'Usuarios' }},
-
-                // Mantenimientos
                     {
                         path: 'sucursal',
                         component: SucursalComponent,
@@ -64,6 +64,6 @@ const pagesRoutes: Routes = [
             { path: 'hospitales', component: HospitalesComponent,  canActivate: [ AdminGuard ], data: { titulo: 'Hospitales' }},
            { path: 'medicos', component: MedicosComponent, data: { titulo: 'Medicos' }, canActivate: [ AdminGuard ]},
             { path: 'medico/:id', component: MedicoComponent, data: { titulo: 'Actualizar Medico' }, canActivate: [ AdminGuard ]},
-            { path: '', redirectTo: '/dashboard', pathMatch: 'full', canActivate: [ AdminGuard ] }
+            { path: 'players', component: PlayersComponent, data: {titulo: 'Players'}, canActivate: [AdminGuard]},
 ];
 export const PAGES_ROUTES = RouterModule.forChild( pagesRoutes );
