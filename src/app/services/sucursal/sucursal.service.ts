@@ -46,7 +46,7 @@ export class SucursalService {
   }
 
   guardarSucursal(sucursa: Sucursals) {
-
+    // console.log('agua', sucursa);
     let url = URL_SERVICIOS + '/sucursal';
 
 

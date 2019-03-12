@@ -27,6 +27,7 @@ import { BusquedaComponent } from './busqueda/busqueda.component';
 import { VerificaTokenGuard } from '../services/guards/verifica-token.guard';
 import { TarjetasComponent } from './tarjetas/tarjetas.component';
 import { PlayersComponent } from './players/players.component';
+import { PlayeComponent } from './players/playe.component';
 const pagesRoutes: Routes = [
             {
                 path: 'dashboard',
@@ -65,5 +66,7 @@ const pagesRoutes: Routes = [
            { path: 'medicos', component: MedicosComponent, data: { titulo: 'Medicos' }, canActivate: [ AdminGuard ]},
             { path: 'medico/:id', component: MedicoComponent, data: { titulo: 'Actualizar Medico' }, canActivate: [ AdminGuard ]},
             { path: 'players', component: PlayersComponent, data: {titulo: 'Players'}, canActivate: [AdminGuard]},
+            { path: 'playe/:id', component: PlayeComponent, data: {titulo: 'Editar Player'}, canActivate: [AdminGuard]},
+            { path: '', redirectTo: '/dashboard', pathMatch: 'full' }
 ];
 export const PAGES_ROUTES = RouterModule.forChild( pagesRoutes );
