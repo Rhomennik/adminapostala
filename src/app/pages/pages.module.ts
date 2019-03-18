@@ -38,10 +38,12 @@ import { SucursalComponent } from './sucursal/sucursal.component';
 import { SucursaComponent } from './sucursal/sucursa.component';
 
 
-// Kanban
-import {DayPilotModule} from 'daypilot-pro-angular';
+
 import { PlayersComponent } from './players/players.component';
 import { PlayeComponent } from './players/playe.component';
+import { RadioComponent } from './radio/radio.component';
+
+
 
 
 
@@ -73,7 +75,8 @@ import { PlayeComponent } from './players/playe.component';
     SucursaComponent,
     TarjetasComponent,
     PlayersComponent,
-    PlayeComponent
+    PlayeComponent,
+    RadioComponent
     ],
     // exportando para poder usar em outros lugares
     exports: [

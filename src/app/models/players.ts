@@ -1,10 +1,11 @@
 export class Players {
 
     constructor (
-        public nombre?: string,
+        public nombre?: any,
         public url?: string,
-        public detalles?: String,
-        public _id?: string
+        public detalles?: string,
+        public _id?: string,
+        public player?: string
     ) { }
 
 }

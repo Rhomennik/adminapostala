@@ -183,7 +183,7 @@ return this.http.post(url, usuario)
                   }
 
                   swal('Usuario actualizado', usuario.nombre, 'success' );
-
+                    console.log(usuario);
                   return true;
                 }));
 

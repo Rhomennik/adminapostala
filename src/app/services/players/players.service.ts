@@ -4,11 +4,15 @@ import { HttpClient } from '@angular/common/http';
 import { UsuarioService } from '../service.index';
 import { Players } from '../../models/players';
 import { map } from 'rxjs/operators';
+import { Departamentos } from 'src/app/models/departamentos';
 
 @Injectable({
   providedIn: 'root'
 })
 export class PlayersService {
+
+  departamentos: Departamentos;
+  token: string;
 
   constructor(
     public http: HttpClient,
@@ -20,6 +24,19 @@ export class PlayersService {
     url += '?token=' + this._usuarioService.token;
     return this.http.get(url);
   }
+
+actualizarDepartamentos( da: Departamentos) {
+
+  let url = URL_SERVICIOS + '/departamentos/' + da._id;
+    url += '?token=' + this.token;
+
+    return this.http.put( url, da )
+                .pipe(map( (resp: any) => {
+                  swal('Usuario actualizado', da.nombre, 'success' );
+                  console.log(da);
+                  return true;
+                }));
+}
 
 
 

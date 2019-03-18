@@ -1,0 +1,107 @@
+<div class="row animated fadeIn" *ngIf="cargando">
+    <div class="col-sm-12">
+
+        <div class="alert alert-info text-center">
+            <strong>Cargando</strong>
+            <br>
+            <i class="fa fa-circle-o-notch fa-spin fa-2x"></i>
+            <br>
+            <span>Espere    Porfavor</span>
+
+        </div>
+
+    </div>
+</div>
+
+<div class="row animated fadeIn" *ngIf="!cargando">
+    <div class="col-12">
+        <div class="card">
+            <div class="card-body table-responsive">
+
+                <h3 class="card-title">Usuarios registrados <small class="label label-success label-rounded">{{ totalRegistro }}</small></h3>
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>Nombre</th>
+                            <th>Radio</th>
+                            <th>Opciones</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let usuario of dep">
+                            <td>{{ usuario.nombre}}</td>
+                            <td>
+                                <div>
+
+                                    <h3>{{usuario.player.nombre}}</h3>
+                                    <select [(ngModel)]="usuario.player" class="form-control"> // value is a string or number
+                                     <option *ngFor="let a of play" value="{{a._id}}">{{a.nombre}}</option>
+                                 </select>
+                                </div>
+                            </td>
+
+                            <td>
+                                <button (click)="guardarDepartamento( usuario )" class="btn btn-primary">
+                            <i class="fa fa-save"></i>
+                          </button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--
+    <div class="col-lg-6">
+        <div class="card">
+            <div class="card-body">
+                <h4 class="card-title">Central de control RADIOS</h4>
+                <h6 class="card-subtitle">jjj <code>.tj</code></h6>
+                <div class="table-responsive">
+    
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>#</th>
+                                <th>First Name</th>
+                                <th>Radio</th>
+                                <th>Guardar</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+    
+                            <tr *ngFor="let da of dep">
+                                <td>{{da.numero}}</td>
+                                <td>{{da.nombre}}</td>
+                                <td>
+                                    <select class="form-control">
+                                                    <option disabled>{{da.player.nombre}}</option>
+                                                    <option value="oi">legal</option>
+                                                        </select>
+                                </td>
+                                <td>
+                                    <button (click)="guardarDepartamento( da )" class="btn btn-primary">
+                                            <i class="fa fa-save"></i>
+                                        </button>
+                                </td>
+                            </tr>
+    
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+gghf
+
+
+
+
+
+
+-->

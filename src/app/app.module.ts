@@ -21,7 +21,7 @@ import { ServiceModule } from './services/service.module';
 import { PagesComponent } from './pages/pages.component';
 import { SharedModule } from './shared/shared.module';
 
-
+import { MDBBootstrapModule } from 'angular-bootstrap-md';
 
 
 
@@ -41,7 +41,8 @@ import { SharedModule } from './shared/shared.module';
     FormsModule,
     ReactiveFormsModule,
     ServiceModule,
-    SharedModule
+    SharedModule,
+    MDBBootstrapModule.forRoot()
   ],
   providers: [],
   bootstrap: [AppComponent]
