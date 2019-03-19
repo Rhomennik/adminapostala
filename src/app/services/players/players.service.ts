@@ -18,32 +18,36 @@ export class PlayersService {
     public http: HttpClient,
     public _usuarioService: UsuarioService
   ) { }
-  // Este es para listar LAs Sucursales
+
+  // #####################
+  // listar LAs Sucursales
+  // #####################
+
   listarPlayers( desde: number = 0) {
-    let url = URL_SERVICIOS + '/player/desde/' + desde;
+   let url = URL_SERVICIOS + '/player/desde/' + desde;
     url += '?token=' + this._usuarioService.token;
-    return this.http.get(url);
+      return this.http.get(url);
   }
 
-actualizarDepartamentos( da: Departamentos) {
+// ###################################
+// Actualizando Radio no Departamentos
+// ###################################
+actualizarDepartamentos( da: Departamentos, p: Players) {
 
-  let url = URL_SERVICIOS + '/departamentos/' + da._id;
-    url += '?token=' + this.token;
-
-    return this.http.put( url, da )
-                .pipe(map( (resp: any) => {
-                  swal('Usuario actualizado', da.nombre, 'success' );
-                  console.log(da);
-                  return true;
-                }));
+  let url = URL_SERVICIOS + '/departamentos/' + da._id + '/' + p._id;
+    url += '?token=' + this._usuarioService.token;
+     return this.http.put( url, da )
+       .pipe(map( (resp: any) => {
+          swal('Usuario actualizado', da.nombre, 'success' );
+            return true;
+ }));
 }
 
-
-
-  // Ou guarda ou atualiza?
-
+// ############################
+// Guardar, Actualizar PLAYER
+// ############################
 guardaroatualizarSucursal(players: Players) {
-  console.log('valor]es');
+  // console.log(players);
 
   let url = URL_SERVICIOS + '/player';
 
@@ -61,21 +65,22 @@ guardaroatualizarSucursal(players: Players) {
 
   } else {
 
-    // criando
-
- //   url += '?token=' + this._usuarioService.token;
- console.log('Criando');
+// Criando novo Player
+//   url += '?token=' + this._usuarioService.token;
+// console.log('Criando');
     return this.http.post(url, players)
     .pipe(map((resp: any) => {
       swal('Players Creado', players.nombre, 'success');
-      return resp.players;
+        return resp.players;
     }));
 }
 
   }
 
 
-// If for NAVIGATE TO SUCURSA PER EDIT
+// #######################################################################
+// Listando info, quando edita Player => "/playe/5c82786a950977325059dc45"
+// #######################################################################
 editarPlayer( id: String ) {
   const url = URL_SERVICIOS + '/player/' + id;
   return this.http.get(url)
@@ -83,9 +88,9 @@ editarPlayer( id: String ) {
 }
 
 
-
+// #####################
 // Eliminar Player
-
+// #####################
 borrarPlayer( id: String ) {
 
   let url = URL_SERVICIOS +  '/player/' + id;
@@ -98,12 +103,14 @@ borrarPlayer( id: String ) {
 }
 
 
-// Buscar Player
+// #####################
+// Buscando Player
+// #####################
 
 buscarPlayer( termino: string) {
   const url = URL_SERVICIOS + '/busqueda/coleccion/player/' + termino;
-  return this.http.get(url)
-  .pipe(map((resp: any) => resp.player));
+    return this.http.get(url)
+      .pipe(map((resp: any) => resp.player));
 }
 
 }

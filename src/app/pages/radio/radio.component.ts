@@ -11,6 +11,7 @@ import { PlayersService } from 'src/app/services/players/players.service';
 import { Departamentos } from 'src/app/models/departamentos';
 import { Players } from 'src/app/models/players';
 import { NgForm } from '@angular/forms';
+import { delay } from 'q';
 
 @Component({
   selector: 'app-radio',
@@ -18,12 +19,14 @@ import { NgForm } from '@angular/forms';
   styles: ['./radio.component.css']
 })
 export class RadioComponent implements OnInit {
-  ak: Players = new Players();
+
+  // Models
   play: Players[] = [];
   dep: Departamentos[] = [];
+
+  // Funcoes
   desde: number = 0;
   totalRegistro: Number = 0;
-
   cargando: false;
 
   depi: Departamentos = new Departamentos();
@@ -39,36 +42,47 @@ export class RadioComponent implements OnInit {
     this.listarPlayer();
   }
 
+
+// #####################
+// Listando Sucursales
+// #####################
 listarSucursal() {
   this._sucursalService.cargarDepartamentos(this.desde)
   .subscribe((resp: any) => {
+    console.log('listar');
     this.dep = resp.departamentoses;
     this.totalRegistro = resp.total;
- //   const a = this.dep = resp.departamentoses;
- //   console.log('este es dep', a);
   });
 }
 
-listarPlayer() {
 
+
+// #####################
+// Listando Players
+// #####################
+
+listarPlayer() {
 this._playerService.listarPlayers()
 .subscribe((resp: any) => {
   this.play = resp.player;
   const a = this.play = resp.player;
- // console.log(a);
-});
+  });
 }
 
-guardarDepartamento(da: Departamentos) {
+// ##########################
+// Guardando Radio escolhida,
+// ##########################
+  async guardarDepartamento(da: Departamentos, p: Players) {
 
-  console.log(da);
-  this._playerService.actualizarDepartamentos( da )
+
+  // ***Comentario Explicativo***
+  // console.log('Departamento Seleccionado:', da.nombre, 'Player Seleccionado', p.nombre);
+  this._playerService.actualizarDepartamentos( da, p )
   .subscribe();
 
-
-}
-
-
-
-
+  // ***Comentario Explicativo***
+    // Aqui logo de trocar a radio atualizamos a interface, para ve ra radio atual
+    await delay(10);
+  this.listarSucursal();
+  }
 }
