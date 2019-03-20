@@ -20,7 +20,7 @@ export class PlayersService {
   ) { }
 
   // #####################
-  // listar LAs Sucursales
+  // listar los Players
   // #####################
 
   listarPlayers( desde: number = 0) {

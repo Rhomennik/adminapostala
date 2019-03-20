@@ -15,6 +15,7 @@ export class MaquinasComponent implements OnInit {
   interval: NodeJS.Timer;
   desde: number = 0;
   totalRegistros: number = 0;
+
   constructor(
     public _maquinasService: MaquinasService
     ) { }

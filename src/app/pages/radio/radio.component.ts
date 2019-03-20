@@ -27,7 +27,7 @@ export class RadioComponent implements OnInit {
   // Funcoes
   desde: number = 0;
   totalRegistro: Number = 0;
-  cargando: false;
+  cargando: boolean = false;
 
   depi: Departamentos = new Departamentos();
 
@@ -82,7 +82,7 @@ this._playerService.listarPlayers()
 
   // ***Comentario Explicativo***
     // Aqui logo de trocar a radio atualizamos a interface, para ve ra radio atual
-    await delay(10);
+    await delay(100);
   this.listarSucursal();
   }
 }

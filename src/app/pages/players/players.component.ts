@@ -1,9 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-
-
-
-
-
 import { Players } from '../../models/players';
 import { PlayersService } from '../../services/players/players.service';
 @Component({
