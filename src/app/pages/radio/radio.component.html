@@ -30,31 +30,20 @@
                         <tr *ngFor="let Departa of dep">
                             <td>{{ Departa.nombre}}</td>
                             <td>
-                                <!-- Example split danger button -->
+                                <!-- Example single danger button -->
                                 <div class="btn-group">
-                                    <button type="button" class="btn btn-danger">{{Departa.player.nombre}}</button>
-                                    <button type="button" class="btn btn-danger dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          <span class="sr-only">Toggle Dropdown</span>
-        </button>
+                                    <button type="button" class="btn btn-danger dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">{{ Departa.nombre }}</button>
                                     <div class="dropdown-menu">
                                         <a class="dropdown-item" (click)="guardarDepartamento( Departa, p )" *ngFor="let p of play">{{p.nombre}}</a>
                                         <div class="dropdown-divider"></div>
-                                        <a class="dropdown-item" href="#">None</a>
+                                        <a class="dropdown-item" href="#">Separated link</a>
                                     </div>
                                 </div>
+
                         </tr>
                     </tbody>
                 </table>
             </div>
         </div>
     </div>
-
-
-
-
-
-
-
-
-
 </div>
